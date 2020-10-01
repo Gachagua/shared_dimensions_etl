@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="TestRosterReporting_staging"
+  DTS:DTSID="{D43F1335-4CB4-414E-ABBC-6CFAA593D8E0}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=173.212.223.134;User ID=BOSSIS0001;Initial Catalog=RosterReporting_staging;Provider=SQLNCLI11.1;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1"
+        p4:Salt="wi8fqtm+Uo0="
+        p4:IV="bqqRxhgyogxUE/HOzczv8w=="
+        p4:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" xmlns:p4="www.microsoft.com/SqlServer/SSIS">QE3zWUbFWSTnitpQlWPdL/N3cfD8XlM6FPKN/YGuDn5yvmoWsa5c/QhYNfgv9a2XAWSi6WdAUt/8mtUTHJkKuj2ZJ/heMcKm/M8aBVwi73KlWhp9kIPvltDeOPvn1Cd0yfHOesPowDn2CPQDJysqRTSegx+FqW33sncmBvQb3Jo=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

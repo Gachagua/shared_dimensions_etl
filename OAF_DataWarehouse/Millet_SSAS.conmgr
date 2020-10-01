@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Millet_SSAS"
+  DTS:DTSID="{CCDD9121-8241-420C-B002-CC5FA301AB70}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=millet.oneacrefund.org;User ID=BOSSIS0001;Initial Catalog=SSAS;Provider=SQLNCLI11.1;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1"
+        p4:Salt="g+/TlPspC8s="
+        p4:IV="S9uK/yCKImDA1kTzXDPBtw=="
+        p4:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" xmlns:p4="www.microsoft.com/SqlServer/SSIS">/v4Q3iCIVhCcR3G7n2N3c1CLDwGpWMaPn/lvbhVcFaTdYnmpln7z6uhXqVwgAf7nDHza7roFBhBnbjD0A8mcIhQvmuaRSnNf+YBSMq5fmVvbhM+udEYvu9qqZG5XbnYFcDmL/3KCKTVctJyDI2WpRgfvBhxfG9MMGA7iKFDKZH8=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

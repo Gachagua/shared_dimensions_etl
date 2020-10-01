@@ -1,0 +1,16 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="DataWarehouse_VM"
+  DTS:DTSID="{B116E770-B0B2-4663-858C-F95488974B9D}"
+  DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=88.198.150.202;User ID=denis.gachagua;Initial Catalog=OAF_SAP_DATAWAREHOUSE_staging;Application Name=SSIS-OAF_DataWarehouse-{B116E770-B0B2-4663-858C-F95488974B9D}88.198.150.202.OAF_SAP_DATAWAREHOUSE_staging.denis.gachagua1;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1"
+        p4:Salt="92lAavZclw=="
+        p4:IV="UnjMrTTdjh0=" xmlns:p4="www.microsoft.com/SqlServer/SSIS">bkkZje5xOGUJsn3G31xnbwGn6dPZFJ4nq6LHXoLjbF9IIaTyYmXENZZjMEd4y13iPC42knTbI0j2JTSKeQuu1X1OQyZrscjTBzpLRjX1aQ5CZT152+pfb+YCidy+FMEtx37pfG64vQsQQy+uwhBkdW0RqKK7yiDLE90mgb+kRu4=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

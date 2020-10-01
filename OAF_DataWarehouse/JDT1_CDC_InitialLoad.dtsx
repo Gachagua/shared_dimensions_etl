@@ -1,0 +1,806 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/24/2017 10:02:38 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-6JUMEHF"
+  DTS:CreatorName="DESKTOP-6JUMEHF\Gachagua-OAF"
+  DTS:DTSID="{73015EC9-9165-46CA-9983-E18D81FAF2F1}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.0800.90"
+  DTS:LocaleID="2057"
+  DTS:ObjectName="JDT1_CDC_InitialLoad"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="4"
+  DTS:VersionGUID="{1D77CF98-C593-45B8-9612-BFFD6F842EA1}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\CDC - BI"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{679a8aca-1a22-4d86-84ac-1182b8f80e84}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CDC - BI">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\CDC - BI\CDC Control End"
+          DTS:CreationName="Attunity.CdcControlTask"
+          DTS:Description="CDC Control Task"
+          DTS:DTSID="{313d0c62-39d1-4e5c-a35c-123025e83e38}"
+          DTS:ExecutableType="Attunity.CdcControlTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="CDC Control End"
+          DTS:ThreadHint="9">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <CDCControlTask
+              Connection=""
+              TaskOperation="MarkInitialLoadStart"
+              OperationParameter=""
+              StateConnection=""
+              StateVariable=""
+              AutomaticStatePersistence="True"
+              StateName=""
+              StateTable=""
+              CommandTimeout="30"
+              ChangeDetectionRetryInterval="10"
+              ChangeDetectionTimeout="60" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\CDC - BI\CDC Control Start"
+          DTS:CreationName="Attunity.CdcControlTask"
+          DTS:Description="CDC Control Task"
+          DTS:DTSID="{a52703fe-e0eb-4fd9-9bd1-43b50afd0030}"
+          DTS:ExecutableType="Attunity.CdcControlTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="CDC Control Start"
+          DTS:ThreadHint="8">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <CDCControlTask
+              Connection=""
+              TaskOperation="MarkInitialLoadStart"
+              OperationParameter=""
+              StateConnection=""
+              StateVariable=""
+              AutomaticStatePersistence="True"
+              StateName=""
+              StateTable=""
+              CommandTimeout="30"
+              ChangeDetectionRetryInterval="10"
+              ChangeDetectionTimeout="60" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\CDC - BI\Data Flow Task"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{b7107446-b056-4b56-8973-8ef8f2ac26da}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\CDC - ETH"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{a2e5a782-dba5-4421-8028-659ec9616357}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CDC - ETH">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\CDC - ETH\CDC Control End"
+          DTS:CreationName="Attunity.CdcControlTask"
+          DTS:Description="CDC Control Task"
+          DTS:DTSID="{759c8db3-0c17-4633-84f5-d1abfa42d68a}"
+          DTS:ExecutableType="Attunity.CdcControlTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="CDC Control End"
+          DTS:ThreadHint="1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <CDCControlTask
+              Connection=""
+              TaskOperation="MarkInitialLoadStart"
+              OperationParameter=""
+              StateConnection=""
+              StateVariable=""
+              AutomaticStatePersistence="True"
+              StateName=""
+              StateTable=""
+              CommandTimeout="30"
+              ChangeDetectionRetryInterval="10"
+              ChangeDetectionTimeout="60" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\CDC - ETH\CDC Control Start"
+          DTS:CreationName="Attunity.CdcControlTask"
+          DTS:Description="CDC Control Task"
+          DTS:DTSID="{1df82d01-bab0-40a1-8caf-16a09f7e1e76}"
+          DTS:ExecutableType="Attunity.CdcControlTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="CDC Control Start"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <CDCControlTask
+              Connection=""
+              TaskOperation="MarkInitialLoadStart"
+              OperationParameter=""
+              StateConnection=""
+              StateVariable=""
+              AutomaticStatePersistence="True"
+              StateName=""
+              StateTable=""
+              CommandTimeout="30"
+              ChangeDetectionRetryInterval="10"
+              ChangeDetectionTimeout="60" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\CDC - ETH\Data Flow Task"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{028edb87-503b-4112-a99b-58f8bf606f50}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\CDC - KE"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{FB33DDA1-61D2-4F84-BC72-E59016AE747A}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CDC - KE">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\CDC - KE\CDC Control End"
+          DTS:CreationName="Attunity.CdcControlTask"
+          DTS:Description="CDC Control Task"
+          DTS:DTSID="{BC86ACBB-49B3-4683-B38C-C9CCC15C9C49}"
+          DTS:ExecutableType="Attunity.CdcControlTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="CDC Control End"
+          DTS:ThreadHint="3">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <CDCControlTask
+              Connection=""
+              TaskOperation="MarkInitialLoadStart"
+              OperationParameter=""
+              StateConnection=""
+              StateVariable=""
+              AutomaticStatePersistence="True"
+              StateName=""
+              StateTable=""
+              CommandTimeout="30"
+              ChangeDetectionRetryInterval="10"
+              ChangeDetectionTimeout="60" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\CDC - KE\CDC Control Start"
+          DTS:CreationName="Attunity.CdcControlTask"
+          DTS:Description="CDC Control Task"
+          DTS:DTSID="{12745E38-B983-4E44-8FF0-5CD157CC4777}"
+          DTS:ExecutableType="Attunity.CdcControlTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="CDC Control Start"
+          DTS:ThreadHint="2">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <CDCControlTask
+              Connection=""
+              TaskOperation="MarkInitialLoadStart"
+              OperationParameter=""
+              StateConnection=""
+              StateVariable=""
+              AutomaticStatePersistence="True"
+              StateName=""
+              StateTable=""
+              CommandTimeout="30"
+              ChangeDetectionRetryInterval="10"
+              ChangeDetectionTimeout="60" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\CDC - KE\Data Flow Task"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{24B12502-45D8-4ADF-AA9E-F2DDF32F8462}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\CDC - MW"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{83be9ca1-a397-4930-b59b-5f4400ff3101}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CDC - MW">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\CDC - MW\CDC Control End"
+          DTS:CreationName="Attunity.CdcControlTask"
+          DTS:Description="CDC Control Task"
+          DTS:DTSID="{ed53c53b-0a67-4ffc-adb0-036e186594f5}"
+          DTS:ExecutableType="Attunity.CdcControlTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="CDC Control End"
+          DTS:ThreadHint="15">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <CDCControlTask
+              Connection=""
+              TaskOperation="MarkInitialLoadStart"
+              OperationParameter=""
+              StateConnection=""
+              StateVariable=""
+              AutomaticStatePersistence="True"
+              StateName=""
+              StateTable=""
+              CommandTimeout="30"
+              ChangeDetectionRetryInterval="10"
+              ChangeDetectionTimeout="60" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\CDC - MW\CDC Control Start"
+          DTS:CreationName="Attunity.CdcControlTask"
+          DTS:Description="CDC Control Task"
+          DTS:DTSID="{e8ee044b-d88d-480a-bc41-30b2406d4c1c}"
+          DTS:ExecutableType="Attunity.CdcControlTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="CDC Control Start"
+          DTS:ThreadHint="14">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <CDCControlTask
+              Connection=""
+              TaskOperation="MarkInitialLoadStart"
+              OperationParameter=""
+              StateConnection=""
+              StateVariable=""
+              AutomaticStatePersistence="True"
+              StateName=""
+              StateTable=""
+              CommandTimeout="30"
+              ChangeDetectionRetryInterval="10"
+              ChangeDetectionTimeout="60" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\CDC - MW\Data Flow Task"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{c272ac74-0444-4ef6-8063-b438a479d8c5}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\CDC - RW"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{f93b47d2-951d-4861-8c48-8adb0feefaa1}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CDC - RW">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\CDC - RW\CDC Control End"
+          DTS:CreationName="Attunity.CdcControlTask"
+          DTS:Description="CDC Control Task"
+          DTS:DTSID="{c2a76cad-2dc2-469d-963f-67f864acff90}"
+          DTS:ExecutableType="Attunity.CdcControlTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="CDC Control End"
+          DTS:ThreadHint="7">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <CDCControlTask
+              Connection=""
+              TaskOperation="MarkInitialLoadStart"
+              OperationParameter=""
+              StateConnection=""
+              StateVariable=""
+              AutomaticStatePersistence="True"
+              StateName=""
+              StateTable=""
+              CommandTimeout="30"
+              ChangeDetectionRetryInterval="10"
+              ChangeDetectionTimeout="60" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\CDC - RW\CDC Control Start"
+          DTS:CreationName="Attunity.CdcControlTask"
+          DTS:Description="CDC Control Task"
+          DTS:DTSID="{8b567f5e-4448-4469-9ae9-1ddcd99ff645}"
+          DTS:ExecutableType="Attunity.CdcControlTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="CDC Control Start"
+          DTS:ThreadHint="6">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <CDCControlTask
+              Connection=""
+              TaskOperation="MarkInitialLoadStart"
+              OperationParameter=""
+              StateConnection=""
+              StateVariable=""
+              AutomaticStatePersistence="True"
+              StateName=""
+              StateTable=""
+              CommandTimeout="30"
+              ChangeDetectionRetryInterval="10"
+              ChangeDetectionTimeout="60" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\CDC - RW\Data Flow Task"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{0724f824-b76b-46ed-8c35-aea5d0c38e06}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\CDC - TZ"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{774553f6-6a15-48d7-a6c7-3539e8780491}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CDC - TZ">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\CDC - TZ\CDC Control End"
+          DTS:CreationName="Attunity.CdcControlTask"
+          DTS:Description="CDC Control Task"
+          DTS:DTSID="{589b3dc5-2fd8-4af8-9f32-911c8427ff40}"
+          DTS:ExecutableType="Attunity.CdcControlTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="CDC Control End"
+          DTS:ThreadHint="10">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <CDCControlTask
+              Connection=""
+              TaskOperation="MarkInitialLoadStart"
+              OperationParameter=""
+              StateConnection=""
+              StateVariable=""
+              AutomaticStatePersistence="True"
+              StateName=""
+              StateTable=""
+              CommandTimeout="30"
+              ChangeDetectionRetryInterval="10"
+              ChangeDetectionTimeout="60" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\CDC - TZ\CDC Control Start"
+          DTS:CreationName="Attunity.CdcControlTask"
+          DTS:Description="CDC Control Task"
+          DTS:DTSID="{75397652-5063-4721-ad61-928523de826d}"
+          DTS:ExecutableType="Attunity.CdcControlTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="CDC Control Start"
+          DTS:ThreadHint="11">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <CDCControlTask
+              Connection=""
+              TaskOperation="MarkInitialLoadStart"
+              OperationParameter=""
+              StateConnection=""
+              StateVariable=""
+              AutomaticStatePersistence="True"
+              StateName=""
+              StateTable=""
+              CommandTimeout="30"
+              ChangeDetectionRetryInterval="10"
+              ChangeDetectionTimeout="60" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\CDC - TZ\Data Flow Task"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{86be5541-fd46-4947-91f1-9577d07998e3}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\CDC - UG"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{730d2916-baa8-439e-a4bc-cfc76eb26bdf}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CDC - UG">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\CDC - UG\CDC Control End"
+          DTS:CreationName="Attunity.CdcControlTask"
+          DTS:Description="CDC Control Task"
+          DTS:DTSID="{38ad4681-17d1-4ea0-a70d-bcc5feaaae91}"
+          DTS:ExecutableType="Attunity.CdcControlTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="CDC Control End"
+          DTS:ThreadHint="5">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <CDCControlTask
+              Connection=""
+              TaskOperation="MarkInitialLoadStart"
+              OperationParameter=""
+              StateConnection=""
+              StateVariable=""
+              AutomaticStatePersistence="True"
+              StateName=""
+              StateTable=""
+              CommandTimeout="30"
+              ChangeDetectionRetryInterval="10"
+              ChangeDetectionTimeout="60" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\CDC - UG\CDC Control Start"
+          DTS:CreationName="Attunity.CdcControlTask"
+          DTS:Description="CDC Control Task"
+          DTS:DTSID="{4b941ac3-2a2b-4ee0-a0e2-6fc580de3a0b}"
+          DTS:ExecutableType="Attunity.CdcControlTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="CDC Control Start"
+          DTS:ThreadHint="4">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <CDCControlTask
+              Connection=""
+              TaskOperation="MarkInitialLoadStart"
+              OperationParameter=""
+              StateConnection=""
+              StateVariable=""
+              AutomaticStatePersistence="True"
+              StateName=""
+              StateTable=""
+              CommandTimeout="30"
+              ChangeDetectionRetryInterval="10"
+              ChangeDetectionTimeout="60" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\CDC - UG\Data Flow Task"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{48798c8b-865b-4c05-be9d-ea92b746c2ca}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\CDC - US"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{e65b4511-3927-41d4-93c0-d797983491fb}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="CDC - US">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\CDC - US\CDC Control End"
+          DTS:CreationName="Attunity.CdcControlTask"
+          DTS:Description="CDC Control Task"
+          DTS:DTSID="{b12649c0-3aa7-42f4-8a8b-4158fa037666}"
+          DTS:ExecutableType="Attunity.CdcControlTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="CDC Control End"
+          DTS:ThreadHint="13">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <CDCControlTask
+              Connection=""
+              TaskOperation="MarkInitialLoadStart"
+              OperationParameter=""
+              StateConnection=""
+              StateVariable=""
+              AutomaticStatePersistence="True"
+              StateName=""
+              StateTable=""
+              CommandTimeout="30"
+              ChangeDetectionRetryInterval="10"
+              ChangeDetectionTimeout="60" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\CDC - US\CDC Control Start"
+          DTS:CreationName="Attunity.CdcControlTask"
+          DTS:Description="CDC Control Task"
+          DTS:DTSID="{492325c4-0f94-40c2-bb56-f8d2d5bd35f0}"
+          DTS:ExecutableType="Attunity.CdcControlTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="CDC Control Start"
+          DTS:ThreadHint="12">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <CDCControlTask
+              Connection=""
+              TaskOperation="MarkInitialLoadStart"
+              OperationParameter=""
+              StateConnection=""
+              StateVariable=""
+              AutomaticStatePersistence="True"
+              StateName=""
+              StateTable=""
+              CommandTimeout="30"
+              ChangeDetectionRetryInterval="10"
+              ChangeDetectionTimeout="60" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\CDC - US\Data Flow Task"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{cdf7fa7c-348a-46c9-83bf-c6147fe6b98b}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql12">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="162,42"
+          Id="Package\CDC - KE\CDC Control Start"
+          TopLeft="26,11" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\CDC - KE\Data Flow Task"
+          TopLeft="30,70" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\CDC - KE\CDC Control End"
+          TopLeft="24,126" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="False"
+          PanelSize="205,223"
+          Size="145,43"
+          Id="Package\CDC - KE"
+          TopLeft="11,74" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\CDC - RW\CDC Control End"
+          TopLeft="24,126" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\CDC - RW\CDC Control Start"
+          TopLeft="26,11" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\CDC - RW\Data Flow Task"
+          TopLeft="30,70" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="False"
+          PanelSize="205,223"
+          Size="149,43"
+          Id="Package\CDC - RW"
+          TopLeft="19,150" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\CDC - BI\CDC Control End"
+          TopLeft="24,126" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\CDC - BI\CDC Control Start"
+          TopLeft="26,11" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\CDC - BI\Data Flow Task"
+          TopLeft="30,70" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="False"
+          PanelSize="205,223"
+          Size="143,43"
+          Id="Package\CDC - BI"
+          TopLeft="241,78" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\CDC - US\CDC Control End"
+          TopLeft="24,126" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\CDC - US\CDC Control Start"
+          TopLeft="26,11" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\CDC - US\Data Flow Task"
+          TopLeft="30,70" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="False"
+          PanelSize="205,223"
+          Size="146,43"
+          Id="Package\CDC - US"
+          TopLeft="781,71" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\CDC - MW\CDC Control End"
+          TopLeft="24,126" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\CDC - MW\CDC Control Start"
+          TopLeft="26,11" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\CDC - MW\Data Flow Task"
+          TopLeft="30,70" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="False"
+          PanelSize="205,223"
+          Size="150,43"
+          Id="Package\CDC - MW"
+          TopLeft="780,157" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\CDC - UG\CDC Control End"
+          TopLeft="24,126" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\CDC - UG\CDC Control Start"
+          TopLeft="26,11" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\CDC - UG\Data Flow Task"
+          TopLeft="30,70" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="False"
+          PanelSize="205,223"
+          Size="147,43"
+          Id="Package\CDC - UG"
+          TopLeft="522,153" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\CDC - ETH\CDC Control End"
+          TopLeft="24,126" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\CDC - ETH\CDC Control Start"
+          TopLeft="26,11" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\CDC - ETH\Data Flow Task"
+          TopLeft="30,70" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="False"
+          PanelSize="205,223"
+          Size="152,43"
+          Id="Package\CDC - ETH"
+          TopLeft="516,71" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\CDC - TZ\CDC Control End"
+          TopLeft="24,126" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\CDC - TZ\CDC Control Start"
+          TopLeft="26,11" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\CDC - TZ\Data Flow Task"
+          TopLeft="30,70" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="False"
+          PanelSize="205,223"
+          Size="145,43"
+          Id="Package\CDC - TZ"
+          TopLeft="238,149" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

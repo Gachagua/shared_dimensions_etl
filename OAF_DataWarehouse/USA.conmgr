@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="USA"
+  DTS:DTSID="{5CC91F70-C02B-4849-8FA4-F201D71863C0}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=sapdb,3341;User ID=BOSSIS0001;Initial Catalog=SBK_OAF_ACC_USA;Provider=SQLNCLI11.1;Persist Security Info=True;Connect Timeout=60;General Timeout=120;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1"
+        p4:Salt="H1VdCU/9NeQ="
+        p4:IV="agujG0VL2hz04CVM7HxgBw=="
+        p4:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" xmlns:p4="www.microsoft.com/SqlServer/SSIS">iwVIV9vBV18PV6lkgFEfj6g/iPJuiB8XFaeAXXVWGurhgDZlK/kkkOxGi7lFywgzIhAg2zi2MMVDPX2aV0xoqpE2NKFSqaLVBkLCVeX6K2lydog3hUheBO/Flf3lcozlqFCyxTUEiVH4bHK35uAbgcwd7MXOC3YCbFc3OQP1cTc=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

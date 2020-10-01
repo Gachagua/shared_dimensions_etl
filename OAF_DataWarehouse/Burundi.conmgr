@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Burundi"
+  DTS:DTSID="{93FA3C61-59AA-440A-B829-21130205EA4C}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=sapdb,3341;User ID=BOSSIS0001;Initial Catalog=SBK_OAF_ACC_BI;Provider=SQLNCLI11.1;Persist Security Info=True;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1"
+        p4:Salt="b/QKBnpxsIU="
+        p4:IV="sNjW9jQ/ieMaW/lmDjkowQ=="
+        p4:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" xmlns:p4="www.microsoft.com/SqlServer/SSIS">4F006WcTDfnt/ajI4k/cv6HhljA3VHhNpM1ATN//MPJEWK04vBnJ9HVBNOgcpgC7z8QJcdj5Mp07E6FHVEt29Djg2z+KO9QxQHcA1KW8Buis8m4HNjCNofSnl/tVn7byHaSwSAdoN0Yr8OGbt6D1q7ikhJaKIFzRjrxqjy9AppM=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

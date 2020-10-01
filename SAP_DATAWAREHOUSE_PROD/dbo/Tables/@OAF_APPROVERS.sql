@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[@OAF_APPROVERS] (
+    [Code] NVARCHAR (50)  NULL,
+    [Name] NVARCHAR (100) NULL
+);
+

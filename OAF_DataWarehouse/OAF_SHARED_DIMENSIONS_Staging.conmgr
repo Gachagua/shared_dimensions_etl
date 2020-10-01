@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="OAF_SHARED_DIMENSIONS_Staging"
+  DTS:DTSID="{7AED1132-D5A3-4B5D-9DB6-56ED94FF62D6}"
+  DTS:CreationName="OLEDB">
+  <DTS:PropertyExpression
+    DTS:Name="ServerName">@[$Project::ServerName]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=mtama.oneacrefund.org,6543;User ID=BOSSIS0001;Initial Catalog=OAF_SHARED_DIMENSIONS_Staging;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1"
+        p4:Salt="UEL4sABlHiU="
+        p4:IV="MNO6vwjnU/1e//U8FU9OTg=="
+        p4:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" xmlns:p4="www.microsoft.com/SqlServer/SSIS">euHttDpaFvwwM81nYfJwJgxD77es5RF5n3Ih3zlV2GKwwJfR5dg4C/SJVrcj+vpwYUKt8s05FRlAwOKLWQoYdb93tvigF/07xwOVvgTLqMhcGXQvaV4m3quN5+/T/zqLITLwdQdr/sChFTB24/OdViw4qvMTv9AybHba/3GQ25M=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

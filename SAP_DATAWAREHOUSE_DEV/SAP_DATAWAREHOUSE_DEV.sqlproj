@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>SAP_DATAWAREHOUSE_DEV</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{44507df5-429c-4dcd-8ff9-7ec52652deac}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql140DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>SAP_DATAWAREHOUSE_DEV</RootNamespace>
+    <AssemblyName>SAP_DATAWAREHOUSE_DEV</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="fas\" />
+    <Folder Include="fas\Views\" />
+    <Folder Include="log\" />
+    <Folder Include="log\Views\" />
+    <Folder Include="pro\" />
+    <Folder Include="pro\Views\" />
+    <Folder Include="inp\" />
+    <Folder Include="inp\Views\" />
+    <Folder Include="HR\" />
+    <Folder Include="HR\Views\" />
+    <Folder Include="fin\" />
+    <Folder Include="fin\Views\" />
+    <Folder Include="Security\" />
+    <Folder Include="dbo\Stored Procedures\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\DimWarehouseItems.sql" />
+    <Build Include="dbo\Tables\AllocationGrantMockUp.sql" />
+    <Build Include="dbo\Tables\LogMovements.sql" />
+    <Build Include="dbo\Tables\DimStatus.sql" />
+    <Build Include="dbo\Tables\SalesOrders.sql" />
+    <Build Include="dbo\Tables\APDownPayments.sql" />
+    <Build Include="dbo\Tables\PurchaseOrders.sql" />
+    <Build Include="dbo\Tables\Items.old.sql" />
+    <Build Include="dbo\Tables\ItemWarehouse.sql" />
+    <Build Include="dbo\Tables\ORIN.sql" />
+    <Build Include="dbo\Tables\BusinessPartnerWithholdingTax.sql" />
+    <Build Include="dbo\Tables\APInvoices.sql" />
+    <Build Include="dbo\Tables\DatabaseSizes.sql" />
+    <Build Include="dbo\Tables\ARCreditMemos.sql" />
+    <Build Include="dbo\Tables\WebExpenseStatus.sql" />
+    <Build Include="dbo\Tables\HR_USER_ALLOCATION.sql" />
+    <Build Include="dbo\Tables\GoodsReceiptPO.sql" />
+    <Build Include="dbo\Tables\DimTransactionType.old.sql" />
+    <Build Include="dbo\Tables\OIDT.sql" />
+    <Build Include="dbo\Tables\OINC.sql" />
+    <Build Include="dbo\Tables\OILM.sql" />
+    <Build Include="dbo\Tables\DimMobilePayments.sql" />
+    <Build Include="dbo\Tables\Approval Templates.sql" />
+    <Build Include="dbo\Tables\ApprovalTemplates.sql" />
+    <Build Include="dbo\Tables\DimDocumentType.sql" />
+    <Build Include="dbo\Tables\Approval_Templates.sql" />
+    <Build Include="dbo\Tables\DimFile.sql" />
+    <Build Include="dbo\Tables\OBTL.sql" />
+    <Build Include="dbo\Tables\Docs_For_Approval.sql" />
+    <Build Include="dbo\Tables\ItemBin.sql" />
+    <Build Include="dbo\Tables\CancelledExpensesAudit.sql" />
+    <Build Include="dbo\Tables\DimWebBankAccounts.sql" />
+    <Build Include="dbo\Tables\OBIN.sql" />
+    <Build Include="dbo\Tables\Incoming_Payments.sql" />
+    <Build Include="dbo\Tables\IncomingPayments.sql" />
+    <Build Include="dbo\Tables\DimCasualWorkers.sql" />
+    <Build Include="dbo\Tables\DocsForConfirmation.sql" />
+    <Build Include="dbo\Tables\AllocationRwandaTrialBalance.sql" />
+    <Build Include="dbo\Tables\WebPayments.sql" />
+    <Build Include="dbo\Tables\WebPaymentBatches.sql" />
+    <Build Include="dbo\Tables\JournalEntries.sql" />
+    <Build Include="dbo\Tables\DimPurchasePriority.sql" />
+    <Build Include="dbo\Tables\InventoryPosting.sql" />
+    <Build Include="dbo\Tables\HeadcountSnapshot.sql" />
+    <Build Include="dbo\Tables\DimDeliveryLocations.sql" />
+    <Build Include="dbo\Tables\BooksClosed.sql" />
+    <Build Include="dbo\Tables\DimExchangeRates.sql" />
+    <Build Include="dbo\Tables\Inventory_Log_Message.sql" />
+    <Build Include="dbo\Tables\%40OAF_HEADCOUNTBUDGET.sql" />
+    <Build Include="dbo\Tables\AllocationBvaLevel.sql" />
+    <Build Include="dbo\Tables\OCRG.sql" />
+    <Build Include="dbo\Tables\DimWarehouses.sql" />
+    <Build Include="dbo\Tables\DepartmentAllocation.sql" />
+    <Build Include="dbo\Tables\GoodsIssues.sql" />
+    <Build Include="dbo\Tables\AllocationCostInitiatives.sql" />
+    <Build Include="dbo\Tables\GoodsReceipts.sql" />
+    <Build Include="dbo\Tables\AllocationBoardLine.sql" />
+    <Build Include="dbo\Tables\%40OAF_BUDGET.sql" />
+    <Build Include="dbo\Tables\ARInvoices.sql" />
+    <Build Include="dbo\Tables\OPRJ.sql" />
+    <Build Include="dbo\Tables\Allocation_Logic.sql" />
+    <Build Include="dbo\Tables\AllocationProReqLeadTime.sql" />
+    <Build Include="dbo\Tables\OPRC.sql" />
+    <Build Include="dbo\Tables\DimSAPProjects.sql" />
+    <Build Include="dbo\Tables\AllocationCro.sql" />
+    <Build Include="dbo\Tables\AllocationGrant.sql" />
+    <Build Include="dbo\Tables\DimAccount.sql" />
+    <Build Include="dbo\Tables\StaffExpenses.sql" />
+    <Build Include="dbo\Tables\%40OAF_FARMERBUDGET.sql" />
+    <Build Include="dbo\Tables\%40OAF_HEADCOUNTACTUAL.sql" />
+    <Build Include="dbo\Tables\RCT2.sql" />
+    <Build Include="dbo\Tables\Vendor_Payment.sql" />
+    <Build Include="dbo\Tables\APInvoiceWTax.sql" />
+    <Build Include="dbo\Tables\%40STAFF_EXP_HDR.sql" />
+    <Build Include="dbo\Tables\APDownPaymentWTax.sql" />
+    <Build Include="dbo\Tables\AP_DownPayment.sql" />
+    <Build Include="dbo\Tables\AllocationBtwDept.sql" />
+    <Build Include="dbo\Tables\ItemBalances.sql" />
+    <Build Include="dbo\Tables\AllocationDept.sql" />
+    <Build Include="dbo\Tables\BVA_USER_ALLOCATION.sql" />
+    <Build Include="dbo\Tables\CRD1.sql" />
+    <Build Include="dbo\Tables\DimBank.sql" />
+    <Build Include="dbo\Tables\AssetClasses.sql" />
+    <Build Include="dbo\Tables\DimCarrier.sql" />
+    <Build Include="dbo\Tables\Capitalizations.sql" />
+    <Build Include="dbo\Tables\DimCurrency.sql" />
+    <Build Include="dbo\Tables\AssetItemBalances.sql" />
+    <Build Include="dbo\Tables\BusinessPartners.sql" />
+    <Build Include="dbo\Tables\AllocationADA.sql" />
+    <Build Include="dbo\Tables\DimVendor.sql" />
+    <Build Include="dbo\Tables\DimExpenseCode.sql" />
+    <Build Include="dbo\Tables\Deliveries.sql" />
+    <Build Include="dbo\Tables\DimCasualActivity.sql" />
+    <Build Include="dbo\Tables\DimExpenseType.sql" />
+    <Build Include="dbo\Tables\DimJobGrade.sql" />
+    <Build Include="dbo\Tables\BinTransactionLogs.sql" />
+    <Build Include="dbo\Tables\APCreditMemos.sql" />
+    <Build Include="dbo\Tables\DimSAPUsers.sql" />
+    <Build Include="dbo\Tables\AllocationGrantTrans.sql" />
+    <Build Include="dbo\Tables\DimStaffLevel.sql" />
+    <Build Include="dbo\Tables\DimSalesEmployees.sql" />
+    <Build Include="dbo\Tables\ItemWarehouseBin.sql" />
+    <Build Include="dbo\Tables\LandedCosts.sql" />
+    <Build Include="dbo\Tables\Expense.sql" />
+    <Build Include="dbo\Tables\WarehouseJournal.sql" />
+    <Build Include="dbo\Tables\GrantAllocations.sql" />
+    <Build Include="dbo\Tables\WebPortalAudit.sql" />
+    <Build Include="dbo\Tables\BankCodes.sql" />
+    <Build Include="dbo\Tables\BusinessPartnerAccounts.sql" />
+    <Build Include="dbo\Tables\PurchaseRequests.sql" />
+    <Build Include="dbo\Tables\DimItem.sql" />
+    <Build Include="dbo\Tables\AllocationBoardLine_test.sql" />
+    <Build Include="dbo\Tables\%40OAF_BUDGET_BS.sql" />
+    <Build Include="dbo\Tables\FORECAST.sql" />
+    <Build Include="dbo\Tables\APCreditMemo.Old.sql" />
+    <Build Include="dbo\Tables\Grant_Budget.sql" />
+    <Build Include="dbo\Tables\SiteGeographyDims.sql" />
+    <Build Include="dbo\Tables\HEAORECAST.sql" />
+    <Build Include="dbo\Tables\Drafts.sql" />
+    <Build Include="dbo\Tables\HEM2.sql" />
+    <Build Include="dbo\Tables\CreditMemos.sql" />
+    <Build Include="dbo\Tables\FAAccountDetermination.sql" />
+    <Build Include="dbo\Tables\OIBQ.sql" />
+    <Build Include="dbo\Tables\IPF2.sql" />
+    <Build Include="dbo\Tables\ManualDepreciation.sql" />
+    <Build Include="dbo\Tables\BambooEmploymentStatus.sql" />
+    <Build Include="dbo\Tables\LocalAuditJournalEntries.sql" />
+    <Build Include="dbo\Tables\OACT.sql" />
+    <Build Include="dbo\Tables\PurchaseRequestVendorSelection.sql" />
+    <Build Include="dbo\Tables\OCPR.sql" />
+    <Build Include="dbo\Tables\BlobStorageToken.sql" />
+    <Build Include="dbo\Tables\OCRD.sql" />
+    <Build Include="dbo\Tables\BPBalances.sql" />
+    <Build Include="dbo\Tables\OHEM.sql" />
+    <Build Include="dbo\Tables\OINM.sql" />
+    <Build Include="dbo\Tables\InventoryCounting.sql" />
+    <Build Include="dbo\Tables\AuditInventoryCounting.sql" />
+    <Build Include="dbo\Tables\OITB.sql" />
+    <Build Include="dbo\Tables\InventoryTransfers.sql" />
+    <Build Include="dbo\Tables\OITW.sql" />
+    <Build Include="dbo\Tables\InventoryLogs.sql" />
+    <Build Include="dbo\Tables\GoodsReturn.sql" />
+    <Build Include="dbo\Tables\ContactPersons.sql" />
+    <Build Include="dbo\Tables\Attachments.sql" />
+    <Build Include="dbo\Tables\PurchaseRequestPortal.sql" />
+    <Build Include="dbo\Tables\OITM.sql" />
+    <Build Include="dbo\Tables\Delivery.sql" />
+    <Build Include="dbo\Tables\SAPReceiptsFolderStructure.sql" />
+    <Build Include="dbo\Tables\Roster_Clients.sql" />
+    <Build Include="dbo\Tables\ORPD.sql" />
+    <Build Include="dbo\Tables\FixedAssets.sql" />
+    <Build Include="dbo\Tables\OutgoingPayments.sql" />
+    <Build Include="dbo\Tables\OWHS.sql" />
+    <Build Include="dbo\Tables\ItemWarehouseBalances.sql" />
+    <Build Include="dbo\Tables\%40OAF_REQUESTOR.sql" />
+    <Build Include="dbo\Tables\%40OAF_APPROVERS.sql" />
+    <Build Include="dbo\Tables\SAPWH.sql" />
+    <Build Include="dbo\Tables\SummaryRosterData.sql" />
+    <Build Include="dbo\Tables\DimTransactionType.sql" />
+    <Build Include="dbo\Tables\DocumentHistory.sql" />
+    <Build Include="dbo\Tables\DimClient.sql" />
+    <Build Include="dbo\Tables\Trial_Balance_Allocation.sql" />
+    <Build Include="dbo\Tables\SAPUserLicenses.sql" />
+    <Build Include="dbo\Tables\ExchangeRates.sql" />
+    <Build Include="dbo\Tables\UserGroup.sql" />
+    <Build Include="dbo\Tables\BVAMaster.sql" />
+    <Build Include="dbo\Tables\JournalVouchers.sql" />
+    <Build Include="dbo\Tables\Retirement.sql" />
+    <Build Include="dbo\Tables\BinLocations.sql" />
+    <Build Include="dbo\Tables\Depreciation.sql" />
+    <Build Include="dbo\Tables\WebEmployee.sql" />
+    <Build Include="dbo\Tables\Capitalization.sql" />
+    <Build Include="dbo\Tables\AssetItemDepreciation.sql" />
+    <Build Include="dbo\Views\v_MovementsAll.sql" />
+    <Build Include="fas\Views\v_KeWebExpense.sql" />
+    <Build Include="fas\Views\v_GrantTransactions.sql" />
+    <Build Include="fas\Views\v_Mapping_DeptAllocation_2.sql" />
+    <Build Include="fas\Views\v_Mapping_DeptAllocation_CRO2016.sql" />
+    <Build Include="fas\Views\v_BooksClosed.sql" />
+    <Build Include="fas\Views\v_WebEmployee.sql" />
+    <Build Include="fas\Views\v_TxPull_Intercompany_Inventory.sql" />
+    <Build Include="fas\Views\v_TrialBalance.sql" />
+    <Build Include="dbo\Views\OutgoingPayment_DocView.sql" />
+    <Build Include="fas\Views\v_WebExpense.sql" />
+    <Build Include="log\Views\v_Movements.sql" />
+    <Build Include="fas\Views\v_BVA_Expense.sql" />
+    <Build Include="fas\Views\v_JobGrade.sql" />
+    <Build Include="fas\Views\v_UserPermissions.sql" />
+    <Build Include="fas\Views\v_TxPull_Fast.sql" />
+    <Build Include="pro\Views\v_PurchaseOrders.sql" />
+    <Build Include="pro\Views\v_KPIs.sql" />
+    <Build Include="log\Views\v_Counts.sql" />
+    <Build Include="inp\Views\v_KPIs.sql" />
+    <Build Include="fas\Views\v_BVA_Headcount.sql" />
+    <Build Include="fas\Views\v_Budget_Expense.sql" />
+    <Build Include="fas\Views\v_Budget_Headcount.sql" />
+    <Build Include="fas\Views\v_Budget_Grant.sql" />
+    <Build Include="fas\Views\v_Mapping_COA.sql" />
+    <Build Include="fas\Views\v_Mapping_BoardLine.sql" />
+    <Build Include="pro\Views\v_GoodsIssues.sql" />
+    <Build Include="fas\Views\v_Mapping_TrialBalance.sql" />
+    <Build Include="pro\Views\v_PurchaseRequests.sql" />
+    <Build Include="fas\Views\v_Mapping_DeptAllocation.sql" />
+    <Build Include="pro\Views\v_APInvoices.sql" />
+    <Build Include="fas\Views\v_Mapping_DeptType.sql" />
+    <Build Include="pro\Views\v_APDownPaymentInvoices.sql" />
+    <Build Include="fas\Views\v_FX.sql" />
+    <Build Include="pro\Views\v_GoodsReceiptPOs.sql" />
+    <Build Include="fas\Views\v_DocView.sql" />
+    <Build Include="fas\Views\v_Headcount.sql" />
+    <Build Include="HR\Views\v_NewCountryNotConfidential.sql" />
+    <Build Include="fas\Views\v_TxPull.sql" />
+    <Build Include="pro\Views\v_OutgoingPayments.sql" />
+    <Build Include="dbo\Views\SapMetadata.sql" />
+    <Build Include="fin\Views\v_WebPayments.sql" />
+    <Build Include="dbo\Stored Procedures\create_dimdate.sql" />
+    <Build Include="dbo\Stored Procedures\CountryFinancials.sql" />
+    <Build Include="fas.sql" />
+    <Build Include="log.sql" />
+    <Build Include="pro.sql" />
+    <Build Include="HR.sql" />
+    <Build Include="fin.sql" />
+    <Build Include="inp.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ArtifactReference Include="..\..\..\..\..\OneDrive\Documents\JOB\DACPAC\OAF_SHARED_DIMENSIONS.dacpac">
+      <HintPath>..\..\..\..\..\OneDrive\Documents\JOB\DACPAC\OAF_SHARED_DIMENSIONS.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+      <DatabaseSqlCmdVariable>OAF_SHARED_DIMENSIONS</DatabaseSqlCmdVariable>
+    </ArtifactReference>
+    <ArtifactReference Include="..\..\..\..\..\OneDrive\Documents\JOB\DACPAC\OAF_HR_DATAWAREHOUSE.dacpac">
+      <HintPath>..\..\..\..\..\OneDrive\Documents\JOB\DACPAC\OAF_HR_DATAWAREHOUSE.dacpac</HintPath>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+      <DatabaseSqlCmdVariable>OAF_HR_DATAWAREHOUSE</DatabaseSqlCmdVariable>
+    </ArtifactReference>
+  </ItemGroup>
+  <ItemGroup>
+    <SqlCmdVariable Include="OAF_HR_DATAWAREHOUSE">
+      <DefaultValue>OAF_HR_DATAWAREHOUSE</DefaultValue>
+      <Value>$(SqlCmdVar__2)</Value>
+    </SqlCmdVariable>
+    <SqlCmdVariable Include="OAF_SHARED_DIMENSIONS">
+      <DefaultValue>OAF_SHARED_DIMENSIONS</DefaultValue>
+      <Value>$(SqlCmdVar__1)</Value>
+    </SqlCmdVariable>
+  </ItemGroup>
+</Project>

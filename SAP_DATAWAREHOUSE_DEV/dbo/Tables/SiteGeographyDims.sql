@@ -1,0 +1,25 @@
+﻿CREATE TABLE [dbo].[SiteGeographyDims] (
+    [GeoID]              INT             NULL,
+    [SiteGeographyDimID] INT             NULL,
+    [CountryID]          INT             NULL,
+    [CountryName]        VARCHAR (100)   NULL,
+    [CurrencyCode]       VARCHAR (3)     NULL,
+    [RegionID]           INT             NULL,
+    [RegionName]         VARCHAR (100)   NULL,
+    [RegionType]         VARCHAR (225)   NULL,
+    [GMT]                VARCHAR (6)     NULL,
+    [DistrictID]         INT             NULL,
+    [DistrictName]       VARCHAR (100)   NULL,
+    [DistrictCode]       VARCHAR (10)    NULL,
+    [SectorID]           INT             NULL,
+    [SectorName]         VARCHAR (100)   NULL,
+    [SectorActive]       BIT             NULL,
+    [SiteID]             INT             NULL,
+    [SiteName]           VARCHAR (255)   NULL,
+    [SiteProjectCode]    VARCHAR (255)   NULL,
+    [SiteCoordinates]    VARBINARY (MAX) NULL,
+    [SiteLatitude]       NUMERIC (9, 6)  NULL,
+    [SiteLongitude]      NUMERIC (9, 6)  NULL,
+    [SiteActive]         BIT             NULL
+);
+

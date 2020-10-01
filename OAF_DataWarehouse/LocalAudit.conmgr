@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="LocalAudit"
+  DTS:DTSID="{A235BBF5-D186-4521-92BA-815D7222B76E}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=grains.oneacrefund.org,3341;User ID=BOSSIS0001;Initial Catalog=LOCAL_AUDIT_DB;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1"
+        p4:Salt="AnYBECkAvlE="
+        p4:IV="SZRYh0eicAvM7MNuKjUJKg=="
+        p4:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" xmlns:p4="www.microsoft.com/SqlServer/SSIS">cqgbqMy9gOhIA6zPQC2EkLvcseAB3yosOGtVchp+WF7haJowkkh1I/KVpxJYOjdRViYQ5f8EzOEjImgYKNWj+XQ2iK1Deo0fDG42Rljv47+CLVSmik13uJf06I18GEPT/4Qtdqp71T+Zed68xG2Fgw1SHeOJdXsNuxAbdPw+b4A=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

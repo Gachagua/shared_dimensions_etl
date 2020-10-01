@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Roaster"
+  DTS:DTSID="{3B3A9F7E-E513-45D5-9D36-B82F88650CF6}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=78.47.206.136,50000;User ID=FinanceReadOnly;Initial Catalog=RosterDataWarehouse;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1"
+        p4:Salt="5IhYW7gaowU="
+        p4:IV="QIhqeZqUw/2VFJgE6JsZLQ=="
+        p4:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" xmlns:p4="www.microsoft.com/SqlServer/SSIS">PFWv0gVd8BW3tetoU05zmpySia29/vbartfSOzZoy/+EXoOnHILjQzwPUyfqzlHJABLtsVgdFXMTDgR9sM5FNH3iiPJDGvPMADW7PNceEYtxyJOOWLtoeE1+HW2UiY5scNQjDkuZM1Q5WHuJynAQtvUn24Q2kWKj7yThj9Lix52Y2+6u6QC//wW60xdZzZqN</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

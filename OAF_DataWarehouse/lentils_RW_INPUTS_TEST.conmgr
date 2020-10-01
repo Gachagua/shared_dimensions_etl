@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="lentils_RW_INPUTS_TEST"
+  DTS:DTSID="{CF5D95D7-3C56-4583-984E-7381E63D513D}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=lentils.oneacrefund.org,3341;User ID=BOSSIS0001;Initial Catalog=SBK_OAF_ACC_KEPL11;Provider=SQLNCLI11.1;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1"
+        p4:Salt="U0lKi/Z0AQ8="
+        p4:IV="fD7L3msdjLbM9UNtXCQamw=="
+        p4:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" xmlns:p4="www.microsoft.com/SqlServer/SSIS">WH32WCTbufo+M1vDXtH1hsdPnTyqWGmjBov2wjZlPRHzip9+s1x2WV03C0zXni0W9v4T30eiE3hjGBPnk46Wc5ls7wttjyYStr7gAupLUsR/6XSa7JLiTFUkOAz6Rke0OKgofsSu+tkPW4EpfcmKLlxoW/24/0eWqTL6Gojg1Io=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="RosterReportingLive"
+  DTS:DTSID="{4EFDFD7E-EB71-44D7-B286-8BC72ACD29FB}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=78.47.206.136,50000;User ID=FinanceReadOnly;Initial Catalog=RosterReporting;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1"
+        p4:Salt="ER05Sx/NLpE="
+        p4:IV="MmlRKRZ1c3KfkZZJi6PNbg=="
+        p4:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" xmlns:p4="www.microsoft.com/SqlServer/SSIS">whXvxVlj3gXT8oxm8Lqz8xpfC9ioB8ixAyJjLEWZuIdu9LOhu8yWXrNt3Cr9vLdkiP2GNxwY1MKd9BZnikC6t6bclA1WerHGPMiW4EnTwZKzYcs4RqggW8JOHeGv94FzG7NwDkwefHcdkvnBQ9P39FgTDaAaJj8KSzAS5JYra79fvwZKzBtalM+0zrKZMmRt</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

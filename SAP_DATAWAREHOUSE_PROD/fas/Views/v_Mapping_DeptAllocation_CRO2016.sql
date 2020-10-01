@@ -1,0 +1,1 @@
+﻿CREATE VIEW fas.v_Mapping_DeptAllocation_CRO2016 AS  select CountryCode, U_AllocationPercent, Mapping_Year, BoardLine, Business_Unit, Board_Line_Order from allocationCRO-- where mapping_year = 2016  

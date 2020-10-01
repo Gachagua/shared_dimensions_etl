@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="DW Staging"
+  DTS:DTSID="{3700B962-3102-4F82-B170-F158F9E20280}"
+  DTS:CreationName="OLEDB">
+  <DTS:PropertyExpression
+    DTS:Name="ServerName">@[$Project::ServerName]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=mtama.oneacrefund.org,6543;User ID=BOSSIS0001;Initial Catalog=OAF_SAP_DATAWAREHOUSE_Staging;Provider=SQLNCLI11.1;Persist Security Info=True;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1"
+        p4:Salt="mdUcBoOiiGM="
+        p4:IV="aL0/YrcZkwcT2MHX31Ex5Q=="
+        p4:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" xmlns:p4="www.microsoft.com/SqlServer/SSIS">zuE5rD3c1kndl/4A+izjj1s5ggK1UZuv6R7sHiELdgNiSmhA8x96VyTMAE27jic3Yy8R6dwFnJ9mc5z/EHpnP9aoRvYrXsfjsZNj2LrKYuF8VEjmdn3j/tL8i6LwOmSUtULvu6SQhvbyQYGgEkLuRo60yA0UJElw4JaU+X7N960=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

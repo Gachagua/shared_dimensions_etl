@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2020
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "OAF_DataWarehouse", "OAF_DataWarehouse\OAF_DataWarehouse.dtproj", "{B7B64069-CC0E-4FD4-A5D3-A17A08494266}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Development|Any CPU = Development|Any CPU
+		Production|Any CPU = Production|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B7B64069-CC0E-4FD4-A5D3-A17A08494266}.Debug|Any CPU.ActiveCfg = Development
+		{B7B64069-CC0E-4FD4-A5D3-A17A08494266}.Debug|Any CPU.Build.0 = Development
+		{B7B64069-CC0E-4FD4-A5D3-A17A08494266}.Development|Any CPU.ActiveCfg = Development
+		{B7B64069-CC0E-4FD4-A5D3-A17A08494266}.Development|Any CPU.Build.0 = Development
+		{B7B64069-CC0E-4FD4-A5D3-A17A08494266}.Production|Any CPU.ActiveCfg = Production
+		{B7B64069-CC0E-4FD4-A5D3-A17A08494266}.Production|Any CPU.Build.0 = Production
+		{B7B64069-CC0E-4FD4-A5D3-A17A08494266}.Release|Any CPU.ActiveCfg = Development
+		{B7B64069-CC0E-4FD4-A5D3-A17A08494266}.Release|Any CPU.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {52F54AD9-21A6-4231-9329-57BEE1F83CD9}
+	EndGlobalSection
+EndGlobal

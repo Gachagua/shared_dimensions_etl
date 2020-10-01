@@ -1,0 +1,2666 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/16/2018 12:40:10 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="GACHAGUA-PC"
+  DTS:CreatorName="GACHAGUA-PC\watchman"
+  DTS:DTSID="{837D7F3F-BC01-4B86-80B3-550B3CD0460F}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.101"
+  DTS:LocaleID="2057"
+  DTS:ObjectName="00_SharedDimensions_TEST"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{210EC42D-E6F8-430C-958D-804D09DAD816}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Dim Locations"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{3ac3fb5d-0930-4e57-aa54-87adef703f79}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Dim Locations">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Dim Locations\Data Flow Task"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:Disabled="True"
+          DTS:DTSID="{4a9d97c3-c09b-4b6d-9edc-a64b2d9ababb}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Dim Locations\Data Flow Task\Lookup Region and Country Details"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup Region and Country Details"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[DimRegion]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[DimRegion]) [refTable]
+where [refTable].[RosterRegionId] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="RegionID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="RegionName" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="RegionType" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="WebPortalRegionId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="RosterRegionId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ProgramId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Program" dataType="DT_WSTR" length="20" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CountryID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CountryCode" dataType="DT_WSTR" length="8" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CountryName" dataType="DT_WSTR" length="20" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="GMT" dataType="DT_STR" length="6" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="RowGuid" dataType="DT_GUID" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Dim Locations\Data Flow Task\11291:invalid};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Dim Locations\Data Flow Task\Lookup Region and Country Details.Connections[OleDbConnection]"
+                      connectionManagerID="{F1117407-6E68-49E3-8E8F-878612073469}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[OAF_SHARED_DIMENSIONS]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Dim Locations\Data Flow Task\Lookup Region and Country Details.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Dim Locations\Data Flow Task\Lookup Region and Country Details.Inputs[Lookup Input].Columns[RosterRegionID]"
+                          cachedDataType="i4"
+                          cachedName="RosterRegionID"
+                          lineageId="Package\Dim Locations\Data Flow Task\11291:invalid">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">RosterRegionId</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Dim Locations\Data Flow Task\Lookup Region and Country Details.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Dim Locations\Data Flow Task\Lookup Region and Country Details.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Dim Locations\Data Flow Task\Lookup Region and Country Details.Outputs[Lookup Match Output].Columns[CountryID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\Dim Locations\Data Flow Task\Lookup Region and Country Details.Outputs[Lookup Match Output].Columns[CountryID]"
+                          name="CountryID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">CountryID</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Dim Locations\Data Flow Task\Lookup Region and Country Details.Outputs[Lookup Match Output].Columns[CountryCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Copy Column"
+                          length="8"
+                          lineageId="Package\Dim Locations\Data Flow Task\Lookup Region and Country Details.Outputs[Lookup Match Output].Columns[CountryCode]"
+                          name="CountryCode"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">CountryCode</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Dim Locations\Data Flow Task\Lookup Region and Country Details.Outputs[Lookup Match Output].Columns[Program]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Copy Column"
+                          length="20"
+                          lineageId="Package\Dim Locations\Data Flow Task\Lookup Region and Country Details.Outputs[Lookup Match Output].Columns[Program]"
+                          name="Program"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">Program</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Dim Locations\Data Flow Task\Lookup Region and Country Details.Outputs[Lookup Match Output].Columns[RegionName]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Copy Column"
+                          length="100"
+                          lineageId="Package\Dim Locations\Data Flow Task\Lookup Region and Country Details.Outputs[Lookup Match Output].Columns[RegionName]"
+                          name="RegionName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">RegionName</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Dim Locations\Data Flow Task\Lookup Region and Country Details.Outputs[Lookup Match Output].Columns[CountryName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Copy Column"
+                          length="20"
+                          lineageId="Package\Dim Locations\Data Flow Task\Lookup Region and Country Details.Outputs[Lookup Match Output].Columns[CountryName]"
+                          name="CountryName"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">CountryName</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Dim Locations\Data Flow Task\Lookup Region and Country Details.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Dim Locations\Data Flow Task\Lookup Region and Country Details.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Dim Locations\Data Flow Task\Lookup Region and Country Details.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Dim Locations\Data Flow Task\Lookup Region and Country Details.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Dim Locations\Data Flow Task\Lookup Region and Country Details.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Dim Locations\Data Flow Task\Lookup Region and Country Details.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Dim Locations\Data Flow Task\Lookup Region and Country Details.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Dim Locations\Data Flow Task\Lookup Region and Country Details.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Dim Locations\Load Country and Region"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{4bed8092-3a68-4878-9f92-727629046c16}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Load Country and Region"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{7AED1132-D5A3-4B5D-9DB6-56ED94FF62D6}"
+              SQLTask:SqlStatementSource="Update DimLocationsTest&#xA;set CountryID = [OAF_SHARED_DIMENSIONS].dbo.DimRegion.CountryID,&#xA;CountryCode = [OAF_SHARED_DIMENSIONS].dbo.DimRegion.CountryCode,&#xA;CountryName = [OAF_SHARED_DIMENSIONS].dbo.DimRegion.CountryName,&#xA;Program = [OAF_SHARED_DIMENSIONS].dbo.DimRegion.Program,&#xA;RegionName = [OAF_SHARED_DIMENSIONS].dbo.DimRegion.RegionName&#xA;&#xA;from [OAF_SHARED_DIMENSIONS].dbo.DimRegion Join DimLocationsTest&#xA;on [OAF_SHARED_DIMENSIONS].dbo.DimRegion.RosterRegionID = DimLocationsTest.RosterRegionID" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Dim Locations\Load RegionID Keys"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{9ef310d7-062a-4c10-b780-eb59173d5255}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Load RegionID Keys"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{7AED1132-D5A3-4B5D-9DB6-56ED94FF62D6}"
+              SQLTask:SqlStatementSource="with CTE as (&#xA;select RegionID, RosterRegionID from DimLocationsTest )&#xA;&#xA;Update CTE&#xA;set RegionID = [OAF_SHARED_DIMENSIONS].dbo.DimRegion.RegionID&#xA;from [OAF_SHARED_DIMENSIONS].dbo.DimRegion Join CTE&#xA;on [OAF_SHARED_DIMENSIONS].dbo.DimRegion.RosterRegionID = CTE.RosterRegionID" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Dim Locations\Load Roster Locations"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{c423e13e-47a6-42ea-876b-0cdfa7126ccb}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Load Roster Locations"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Dim Locations\Load Roster Locations\DimLocationTest"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="DimLocationTest"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[DimLocationsTest]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Dim Locations\Load Roster Locations\DimLocationTest.Connections[OleDbConnection]"
+                      connectionManagerID="{7AED1132-D5A3-4B5D-9DB6-56ED94FF62D6}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[OAF_SHARED_DIMENSIONS_Staging]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Dim Locations\Load Roster Locations\DimLocationTest.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Dim Locations\Load Roster Locations\DimLocationTest.Inputs[OLE DB Destination Input].Columns[RosterActive]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="4"
+                          cachedName="RosterActive"
+                          externalMetadataColumnId="Package\Dim Locations\Load Roster Locations\DimLocationTest.Inputs[OLE DB Destination Input].ExternalColumns[RosterActive]"
+                          lineageId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Output].Columns[RosterActive]" />
+                        <inputColumn
+                          refId="Package\Dim Locations\Load Roster Locations\DimLocationTest.Inputs[OLE DB Destination Input].Columns[RowGuid]"
+                          cachedDataType="guid"
+                          cachedName="RowGuid"
+                          externalMetadataColumnId="Package\Dim Locations\Load Roster Locations\DimLocationTest.Inputs[OLE DB Destination Input].ExternalColumns[RowGuid]"
+                          lineageId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Output].Columns[RowGuid]" />
+                        <inputColumn
+                          refId="Package\Dim Locations\Load Roster Locations\DimLocationTest.Inputs[OLE DB Destination Input].Columns[RosterDistrictID]"
+                          cachedDataType="i4"
+                          cachedName="RosterDistrictID"
+                          externalMetadataColumnId="Package\Dim Locations\Load Roster Locations\DimLocationTest.Inputs[OLE DB Destination Input].ExternalColumns[RosterDistrictID]"
+                          lineageId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Output].Columns[RosterDistrictID]" />
+                        <inputColumn
+                          refId="Package\Dim Locations\Load Roster Locations\DimLocationTest.Inputs[OLE DB Destination Input].Columns[RosterRegionID]"
+                          cachedDataType="i4"
+                          cachedName="RosterRegionID"
+                          externalMetadataColumnId="Package\Dim Locations\Load Roster Locations\DimLocationTest.Inputs[OLE DB Destination Input].ExternalColumns[RosterRegionID]"
+                          lineageId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Output].Columns[RosterRegionID]" />
+                        <inputColumn
+                          refId="Package\Dim Locations\Load Roster Locations\DimLocationTest.Inputs[OLE DB Destination Input].Columns[DistrictName]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="DistrictName"
+                          externalMetadataColumnId="Package\Dim Locations\Load Roster Locations\DimLocationTest.Inputs[OLE DB Destination Input].ExternalColumns[LocationName]"
+                          lineageId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Output].Columns[DistrictName]" />
+                        <inputColumn
+                          refId="Package\Dim Locations\Load Roster Locations\DimLocationTest.Inputs[OLE DB Destination Input].Columns[DistrictCode]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="DistrictCode"
+                          externalMetadataColumnId="Package\Dim Locations\Load Roster Locations\DimLocationTest.Inputs[OLE DB Destination Input].ExternalColumns[LocationCode]"
+                          lineageId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Output].Columns[DistrictCode]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Load Roster Locations\DimLocationTest.Inputs[OLE DB Destination Input].ExternalColumns[RosterActive]"
+                          dataType="bool"
+                          name="RosterActive" />
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Load Roster Locations\DimLocationTest.Inputs[OLE DB Destination Input].ExternalColumns[RowGuid]"
+                          dataType="guid"
+                          name="RowGuid" />
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Load Roster Locations\DimLocationTest.Inputs[OLE DB Destination Input].ExternalColumns[RosterDistrictID]"
+                          dataType="i4"
+                          name="RosterDistrictID" />
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Load Roster Locations\DimLocationTest.Inputs[OLE DB Destination Input].ExternalColumns[RosterRegionID]"
+                          dataType="i4"
+                          name="RosterRegionID" />
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Load Roster Locations\DimLocationTest.Inputs[OLE DB Destination Input].ExternalColumns[LocationName]"
+                          dataType="wstr"
+                          length="50"
+                          name="LocationName" />
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Load Roster Locations\DimLocationTest.Inputs[OLE DB Destination Input].ExternalColumns[LocationCode]"
+                          dataType="wstr"
+                          length="10"
+                          name="LocationCode" />
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Load Roster Locations\DimLocationTest.Inputs[OLE DB Destination Input].ExternalColumns[LocationID]"
+                          dataType="i4"
+                          name="LocationID" />
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Load Roster Locations\DimLocationTest.Inputs[OLE DB Destination Input].ExternalColumns[CountryID]"
+                          dataType="i4"
+                          name="CountryID" />
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Load Roster Locations\DimLocationTest.Inputs[OLE DB Destination Input].ExternalColumns[CountryCode]"
+                          dataType="wstr"
+                          length="8"
+                          name="CountryCode" />
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Load Roster Locations\DimLocationTest.Inputs[OLE DB Destination Input].ExternalColumns[CountryName]"
+                          dataType="wstr"
+                          length="20"
+                          name="CountryName" />
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Load Roster Locations\DimLocationTest.Inputs[OLE DB Destination Input].ExternalColumns[Program]"
+                          dataType="wstr"
+                          length="20"
+                          name="Program" />
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Load Roster Locations\DimLocationTest.Inputs[OLE DB Destination Input].ExternalColumns[RegionID]"
+                          dataType="i4"
+                          name="RegionID" />
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Load Roster Locations\DimLocationTest.Inputs[OLE DB Destination Input].ExternalColumns[RegionName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="RegionName" />
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Load Roster Locations\DimLocationTest.Inputs[OLE DB Destination Input].ExternalColumns[SAPActive]"
+                          dataType="bool"
+                          name="SAPActive" />
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Load Roster Locations\DimLocationTest.Inputs[OLE DB Destination Input].ExternalColumns[WebPortalLocationID]"
+                          dataType="i4"
+                          name="WebPortalLocationID" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Dim Locations\Load Roster Locations\DimLocationTest.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Dim Locations\Load Roster Locations\DimLocationTest.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Dim Locations\Load Roster Locations\DimLocationTest.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Dim Locations\Load Roster Locations\DimLocationTest.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Dim Locations\Load Roster Locations\DimLocationTest.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Dim Locations\Load Roster Locations\DimLocationTest.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Dim Locations\Load Roster Locations\Roster Location Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="Roster Location Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select 
+ RosterDistrictID,
+[DistrictName]
+      ,[DistrictCode]
+      ,[RosterRegionID],
+'True' as [RosterActive],
+'True' as [Active],
+RowGuid
+
+from [dbo].[DimLocations]</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Connections[OleDbConnection]"
+                      connectionManagerID="{7AED1132-D5A3-4B5D-9DB6-56ED94FF62D6}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[OAF_SHARED_DIMENSIONS_Staging]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Output].Columns[DistrictName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Output].ExternalColumns[DistrictName]"
+                          length="50"
+                          lineageId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Output].Columns[DistrictName]"
+                          name="DistrictName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Output].Columns[DistrictCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Output].ExternalColumns[DistrictCode]"
+                          length="10"
+                          lineageId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Output].Columns[DistrictCode]"
+                          name="DistrictCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Output].Columns[RosterActive]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Output].ExternalColumns[RosterActive]"
+                          length="4"
+                          lineageId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Output].Columns[RosterActive]"
+                          name="RosterActive"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Output].Columns[Active]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Output].ExternalColumns[Active]"
+                          length="4"
+                          lineageId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Output].Columns[Active]"
+                          name="Active"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Output].Columns[RosterDistrictID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Output].ExternalColumns[RosterDistrictID]"
+                          lineageId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Output].Columns[RosterDistrictID]"
+                          name="RosterDistrictID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Output].Columns[RosterRegionID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Output].ExternalColumns[RosterRegionID]"
+                          lineageId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Output].Columns[RosterRegionID]"
+                          name="RosterRegionID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Output].Columns[RowGuid]"
+                          dataType="guid"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Output].ExternalColumns[RowGuid]"
+                          lineageId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Output].Columns[RowGuid]"
+                          name="RowGuid"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Output].ExternalColumns[DistrictName]"
+                          dataType="wstr"
+                          length="50"
+                          name="DistrictName" />
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Output].ExternalColumns[DistrictCode]"
+                          dataType="wstr"
+                          length="10"
+                          name="DistrictCode" />
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Output].ExternalColumns[RosterActive]"
+                          codePage="1252"
+                          dataType="str"
+                          length="4"
+                          name="RosterActive" />
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Output].ExternalColumns[Active]"
+                          codePage="1252"
+                          dataType="str"
+                          length="4"
+                          name="Active" />
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Output].ExternalColumns[RosterDistrictID]"
+                          dataType="i4"
+                          name="RosterDistrictID" />
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Output].ExternalColumns[RosterRegionID]"
+                          dataType="i4"
+                          name="RosterRegionID" />
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Output].ExternalColumns[RowGuid]"
+                          dataType="guid"
+                          name="RowGuid" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Error Output].Columns[RosterDistrictID]"
+                          dataType="i4"
+                          lineageId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Error Output].Columns[RosterDistrictID]"
+                          name="RosterDistrictID" />
+                        <outputColumn
+                          refId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Error Output].Columns[DistrictName]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Error Output].Columns[DistrictName]"
+                          name="DistrictName" />
+                        <outputColumn
+                          refId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Error Output].Columns[DistrictCode]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Error Output].Columns[DistrictCode]"
+                          name="DistrictCode" />
+                        <outputColumn
+                          refId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Error Output].Columns[RosterRegionID]"
+                          dataType="i4"
+                          lineageId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Error Output].Columns[RosterRegionID]"
+                          name="RosterRegionID" />
+                        <outputColumn
+                          refId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Error Output].Columns[RosterActive]"
+                          codePage="1252"
+                          dataType="str"
+                          length="4"
+                          lineageId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Error Output].Columns[RosterActive]"
+                          name="RosterActive" />
+                        <outputColumn
+                          refId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Error Output].Columns[Active]"
+                          codePage="1252"
+                          dataType="str"
+                          length="4"
+                          lineageId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Error Output].Columns[Active]"
+                          name="Active" />
+                        <outputColumn
+                          refId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Error Output].Columns[RowGuid]"
+                          dataType="guid"
+                          lineageId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Error Output].Columns[RowGuid]"
+                          name="RowGuid" />
+                        <outputColumn
+                          refId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Dim Locations\Load Roster Locations.Paths[OLE DB Source Output]"
+                  endId="Package\Dim Locations\Load Roster Locations\DimLocationTest.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Dim Locations\Load Roster Locations\Roster Location Source.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Dim Locations\Load SAP Locations"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{2a58d013-7862-47e4-8ece-d2d4733dbc56}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Load SAP Locations"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Dim Locations\Load SAP Locations\DimLocations"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="DimLocations"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[DimLocationsTest]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Dim Locations\Load SAP Locations\DimLocations.Connections[OleDbConnection]"
+                      connectionManagerID="{7AED1132-D5A3-4B5D-9DB6-56ED94FF62D6}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[OAF_SHARED_DIMENSIONS_Staging]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Dim Locations\Load SAP Locations\DimLocations.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Dim Locations\Load SAP Locations\DimLocations.Inputs[OLE DB Destination Input].Columns[SAPActive]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="5"
+                          cachedName="SAPActive"
+                          externalMetadataColumnId="Package\Dim Locations\Load SAP Locations\DimLocations.Inputs[OLE DB Destination Input].ExternalColumns[SAPActive]"
+                          lineageId="Package\Dim Locations\Load SAP Locations\SAP Locations.Outputs[OLE DB Source Output].Columns[SAPActive]" />
+                        <inputColumn
+                          refId="Package\Dim Locations\Load SAP Locations\DimLocations.Inputs[OLE DB Destination Input].Columns[LocationCode]"
+                          cachedDataType="wstr"
+                          cachedLength="8"
+                          cachedName="LocationCode"
+                          externalMetadataColumnId="Package\Dim Locations\Load SAP Locations\DimLocations.Inputs[OLE DB Destination Input].ExternalColumns[LocationCode]"
+                          lineageId="Package\Dim Locations\Load SAP Locations\SAP Locations.Outputs[OLE DB Source Output].Columns[LocationCode]" />
+                        <inputColumn
+                          refId="Package\Dim Locations\Load SAP Locations\DimLocations.Inputs[OLE DB Destination Input].Columns[LocationName]"
+                          cachedDataType="wstr"
+                          cachedLength="30"
+                          cachedName="LocationName"
+                          externalMetadataColumnId="Package\Dim Locations\Load SAP Locations\DimLocations.Inputs[OLE DB Destination Input].ExternalColumns[LocationName]"
+                          lineageId="Package\Dim Locations\Load SAP Locations\SAP Locations.Outputs[OLE DB Source Output].Columns[LocationName]" />
+                        <inputColumn
+                          refId="Package\Dim Locations\Load SAP Locations\DimLocations.Inputs[OLE DB Destination Input].Columns[CountryId]"
+                          cachedDataType="i4"
+                          cachedName="CountryId"
+                          externalMetadataColumnId="Package\Dim Locations\Load SAP Locations\DimLocations.Inputs[OLE DB Destination Input].ExternalColumns[CountryID]"
+                          lineageId="Package\Dim Locations\Load SAP Locations\SAP Locations.Outputs[OLE DB Source Output].Columns[CountryId]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Load SAP Locations\DimLocations.Inputs[OLE DB Destination Input].ExternalColumns[SAPActive]"
+                          dataType="bool"
+                          name="SAPActive" />
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Load SAP Locations\DimLocations.Inputs[OLE DB Destination Input].ExternalColumns[RosterActive]"
+                          dataType="bool"
+                          name="RosterActive" />
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Load SAP Locations\DimLocations.Inputs[OLE DB Destination Input].ExternalColumns[LocationCode]"
+                          dataType="wstr"
+                          length="10"
+                          name="LocationCode" />
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Load SAP Locations\DimLocations.Inputs[OLE DB Destination Input].ExternalColumns[LocationName]"
+                          dataType="wstr"
+                          length="50"
+                          name="LocationName" />
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Load SAP Locations\DimLocations.Inputs[OLE DB Destination Input].ExternalColumns[RegionID]"
+                          dataType="i4"
+                          name="RegionID" />
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Load SAP Locations\DimLocations.Inputs[OLE DB Destination Input].ExternalColumns[CountryName]"
+                          dataType="wstr"
+                          length="20"
+                          name="CountryName" />
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Load SAP Locations\DimLocations.Inputs[OLE DB Destination Input].ExternalColumns[RegionName]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="RegionName" />
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Load SAP Locations\DimLocations.Inputs[OLE DB Destination Input].ExternalColumns[Program]"
+                          dataType="wstr"
+                          length="20"
+                          name="Program" />
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Load SAP Locations\DimLocations.Inputs[OLE DB Destination Input].ExternalColumns[RowGuid]"
+                          dataType="guid"
+                          name="RowGuid" />
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Load SAP Locations\DimLocations.Inputs[OLE DB Destination Input].ExternalColumns[WebPortalLocationID]"
+                          dataType="i4"
+                          name="WebPortalLocationID" />
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Load SAP Locations\DimLocations.Inputs[OLE DB Destination Input].ExternalColumns[LocationID]"
+                          dataType="i4"
+                          name="LocationID" />
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Load SAP Locations\DimLocations.Inputs[OLE DB Destination Input].ExternalColumns[CountryCode]"
+                          dataType="wstr"
+                          length="8"
+                          name="CountryCode" />
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Load SAP Locations\DimLocations.Inputs[OLE DB Destination Input].ExternalColumns[RosterDistrictID]"
+                          dataType="i4"
+                          name="RosterDistrictID" />
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Load SAP Locations\DimLocations.Inputs[OLE DB Destination Input].ExternalColumns[CountryID]"
+                          dataType="i4"
+                          name="CountryID" />
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Load SAP Locations\DimLocations.Inputs[OLE DB Destination Input].ExternalColumns[RosterRegionID]"
+                          dataType="i4"
+                          name="RosterRegionID" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Dim Locations\Load SAP Locations\DimLocations.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Dim Locations\Load SAP Locations\DimLocations.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Dim Locations\Load SAP Locations\DimLocations.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Dim Locations\Load SAP Locations\DimLocations.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Dim Locations\Load SAP Locations\DimLocations.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Dim Locations\Load SAP Locations\DimLocations.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Dim Locations\Load SAP Locations\Does the Location Exist?"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Does the Location Exist?"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[DimLocationsTest]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[DimLocationsTest]) [refTable]
+where [refTable].[LocationCode] = ? and [refTable].[LocationName] = ? and [refTable].[CountryID] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="LocationID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="LocationCode" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="LocationName" dataType="DT_WSTR" length="50" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CountryID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CountryCode" dataType="DT_WSTR" length="8" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CountryName" dataType="DT_WSTR" length="20" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Program" dataType="DT_WSTR" length="20" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="RegionID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="RosterRegionID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="RegionName" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="RosterDistrictID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="RosterActive" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SAPActive" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="WebPortalLocationID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="RowGuid" dataType="DT_GUID" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Dim Locations\Load SAP Locations\SAP Locations.Outputs[OLE DB Source Output].Columns[LocationCode]};#{Package\Dim Locations\Load SAP Locations\SAP Locations.Outputs[OLE DB Source Output].Columns[LocationName]};#{Package\Dim Locations\Load SAP Locations\SAP Locations.Outputs[OLE DB Source Output].Columns[CountryId]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Dim Locations\Load SAP Locations\Does the Location Exist?.Connections[OleDbConnection]"
+                      connectionManagerID="{7AED1132-D5A3-4B5D-9DB6-56ED94FF62D6}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[OAF_SHARED_DIMENSIONS_Staging]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Dim Locations\Load SAP Locations\Does the Location Exist?.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Dim Locations\Load SAP Locations\Does the Location Exist?.Inputs[Lookup Input].Columns[LocationCode]"
+                          cachedDataType="wstr"
+                          cachedLength="8"
+                          cachedName="LocationCode"
+                          lineageId="Package\Dim Locations\Load SAP Locations\SAP Locations.Outputs[OLE DB Source Output].Columns[LocationCode]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">LocationCode</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Dim Locations\Load SAP Locations\Does the Location Exist?.Inputs[Lookup Input].Columns[LocationName]"
+                          cachedDataType="wstr"
+                          cachedLength="30"
+                          cachedName="LocationName"
+                          lineageId="Package\Dim Locations\Load SAP Locations\SAP Locations.Outputs[OLE DB Source Output].Columns[LocationName]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">LocationName</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Dim Locations\Load SAP Locations\Does the Location Exist?.Inputs[Lookup Input].Columns[CountryId]"
+                          cachedDataType="i4"
+                          cachedName="CountryId"
+                          lineageId="Package\Dim Locations\Load SAP Locations\SAP Locations.Outputs[OLE DB Source Output].Columns[CountryId]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">CountryID</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Dim Locations\Load SAP Locations\Does the Location Exist?.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Dim Locations\Load SAP Locations\Does the Location Exist?.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Dim Locations\Load SAP Locations\Does the Location Exist?.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Dim Locations\Load SAP Locations\Does the Location Exist?.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Dim Locations\Load SAP Locations\Does the Location Exist?.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Dim Locations\Load SAP Locations\Does the Location Exist?.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Dim Locations\Load SAP Locations\Does the Location Exist?.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Dim Locations\Load SAP Locations\Does the Location Exist?.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Dim Locations\Load SAP Locations\Does the Location Exist?.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Dim Locations\Load SAP Locations\Does the Location Exist?.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Dim Locations\Load SAP Locations\SAP Locations"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="SAP Locations"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[DimLocations]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">With CTE as (
+select OPRC.PrcCode as LocationCode, 
+OPRC.PrcName as LocationName, 
+OPRC.Active, 
+OPRC.ValidFrom, 
+OPRC.ValidTo,
+a.CountryId,
+Case when OPRC.Locked = 'Y' or OPRC.Active = 'N' or OPRC.ValidFrom &gt; GetDAte() or OPRC.ValidTo &lt; GetDate() then 'N' Else 'Y' end as SAPActive, 
+null as RosterActive
+
+from OPRC left Join OAF_SHARED_DIMENSIONS.dbo.DimCountry a
+on OPRC.CountryCode = a.CountryCode
+
+where OPRC.dimcode = 3 )
+
+select Distinct LocationCode, LocationName, CountryId, 
+case when SAPActive = 'Y' then 'True' else 'False'  end as SAPActive from CTE</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Dim Locations\Load SAP Locations\SAP Locations.Connections[OleDbConnection]"
+                      connectionManagerID="{7BFA4561-4CBB-451B-9C6C-6AF410C2D4F1}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[DataWarehouse]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Dim Locations\Load SAP Locations\SAP Locations.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Dim Locations\Load SAP Locations\SAP Locations.Outputs[OLE DB Source Output].Columns[LocationCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Dim Locations\Load SAP Locations\SAP Locations.Outputs[OLE DB Source Output].ExternalColumns[LocationCode]"
+                          length="8"
+                          lineageId="Package\Dim Locations\Load SAP Locations\SAP Locations.Outputs[OLE DB Source Output].Columns[LocationCode]"
+                          name="LocationCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Dim Locations\Load SAP Locations\SAP Locations.Outputs[OLE DB Source Output].Columns[LocationName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Dim Locations\Load SAP Locations\SAP Locations.Outputs[OLE DB Source Output].ExternalColumns[LocationName]"
+                          length="30"
+                          lineageId="Package\Dim Locations\Load SAP Locations\SAP Locations.Outputs[OLE DB Source Output].Columns[LocationName]"
+                          name="LocationName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Dim Locations\Load SAP Locations\SAP Locations.Outputs[OLE DB Source Output].Columns[CountryId]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Dim Locations\Load SAP Locations\SAP Locations.Outputs[OLE DB Source Output].ExternalColumns[CountryId]"
+                          lineageId="Package\Dim Locations\Load SAP Locations\SAP Locations.Outputs[OLE DB Source Output].Columns[CountryId]"
+                          name="CountryId"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Dim Locations\Load SAP Locations\SAP Locations.Outputs[OLE DB Source Output].Columns[SAPActive]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Dim Locations\Load SAP Locations\SAP Locations.Outputs[OLE DB Source Output].ExternalColumns[SAPActive]"
+                          length="5"
+                          lineageId="Package\Dim Locations\Load SAP Locations\SAP Locations.Outputs[OLE DB Source Output].Columns[SAPActive]"
+                          name="SAPActive"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Load SAP Locations\SAP Locations.Outputs[OLE DB Source Output].ExternalColumns[LocationCode]"
+                          dataType="wstr"
+                          length="8"
+                          name="LocationCode" />
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Load SAP Locations\SAP Locations.Outputs[OLE DB Source Output].ExternalColumns[LocationName]"
+                          dataType="wstr"
+                          length="30"
+                          name="LocationName" />
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Load SAP Locations\SAP Locations.Outputs[OLE DB Source Output].ExternalColumns[CountryId]"
+                          dataType="i4"
+                          name="CountryId" />
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Load SAP Locations\SAP Locations.Outputs[OLE DB Source Output].ExternalColumns[SAPActive]"
+                          codePage="1252"
+                          dataType="str"
+                          length="5"
+                          name="SAPActive" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Dim Locations\Load SAP Locations\SAP Locations.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Dim Locations\Load SAP Locations\SAP Locations.Outputs[OLE DB Source Error Output].Columns[LocationCode]"
+                          dataType="wstr"
+                          length="8"
+                          lineageId="Package\Dim Locations\Load SAP Locations\SAP Locations.Outputs[OLE DB Source Error Output].Columns[LocationCode]"
+                          name="LocationCode" />
+                        <outputColumn
+                          refId="Package\Dim Locations\Load SAP Locations\SAP Locations.Outputs[OLE DB Source Error Output].Columns[LocationName]"
+                          dataType="wstr"
+                          length="30"
+                          lineageId="Package\Dim Locations\Load SAP Locations\SAP Locations.Outputs[OLE DB Source Error Output].Columns[LocationName]"
+                          name="LocationName" />
+                        <outputColumn
+                          refId="Package\Dim Locations\Load SAP Locations\SAP Locations.Outputs[OLE DB Source Error Output].Columns[SAPActive]"
+                          codePage="1252"
+                          dataType="str"
+                          length="5"
+                          lineageId="Package\Dim Locations\Load SAP Locations\SAP Locations.Outputs[OLE DB Source Error Output].Columns[SAPActive]"
+                          name="SAPActive" />
+                        <outputColumn
+                          refId="Package\Dim Locations\Load SAP Locations\SAP Locations.Outputs[OLE DB Source Error Output].Columns[CountryId]"
+                          dataType="i4"
+                          lineageId="Package\Dim Locations\Load SAP Locations\SAP Locations.Outputs[OLE DB Source Error Output].Columns[CountryId]"
+                          name="CountryId" />
+                        <outputColumn
+                          refId="Package\Dim Locations\Load SAP Locations\SAP Locations.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Dim Locations\Load SAP Locations\SAP Locations.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Dim Locations\Load SAP Locations\SAP Locations.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Dim Locations\Load SAP Locations\SAP Locations.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Dim Locations\Load SAP Locations\Update SAP Active"
+                  componentClassID="Microsoft.OLEDBCommand"
+                  contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+                  name="Update SAP Active"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">Update [DimLocationsTest]
+
+set [SAPActive] = ?
+
+
+
+where LocationCode = ? and LocationName = ? and CountryId = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Dim Locations\Load SAP Locations\Update SAP Active.Connections[OleDbConnection]"
+                      connectionManagerID="{7AED1132-D5A3-4B5D-9DB6-56ED94FF62D6}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[OAF_SHARED_DIMENSIONS_Staging]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Dim Locations\Load SAP Locations\Update SAP Active.Inputs[OLE DB Command Input]"
+                      errorOrTruncationOperation="Command Execution"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Command Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Dim Locations\Load SAP Locations\Update SAP Active.Inputs[OLE DB Command Input].Columns[SAPActive]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="5"
+                          cachedName="SAPActive"
+                          externalMetadataColumnId="Package\Dim Locations\Load SAP Locations\Update SAP Active.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          lineageId="Package\Dim Locations\Load SAP Locations\SAP Locations.Outputs[OLE DB Source Output].Columns[SAPActive]" />
+                        <inputColumn
+                          refId="Package\Dim Locations\Load SAP Locations\Update SAP Active.Inputs[OLE DB Command Input].Columns[LocationCode]"
+                          cachedDataType="wstr"
+                          cachedLength="8"
+                          cachedName="LocationCode"
+                          externalMetadataColumnId="Package\Dim Locations\Load SAP Locations\Update SAP Active.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          lineageId="Package\Dim Locations\Load SAP Locations\SAP Locations.Outputs[OLE DB Source Output].Columns[LocationCode]" />
+                        <inputColumn
+                          refId="Package\Dim Locations\Load SAP Locations\Update SAP Active.Inputs[OLE DB Command Input].Columns[LocationName]"
+                          cachedDataType="wstr"
+                          cachedLength="30"
+                          cachedName="LocationName"
+                          externalMetadataColumnId="Package\Dim Locations\Load SAP Locations\Update SAP Active.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          lineageId="Package\Dim Locations\Load SAP Locations\SAP Locations.Outputs[OLE DB Source Output].Columns[LocationName]" />
+                        <inputColumn
+                          refId="Package\Dim Locations\Load SAP Locations\Update SAP Active.Inputs[OLE DB Command Input].Columns[CountryId]"
+                          cachedDataType="i4"
+                          cachedName="CountryId"
+                          externalMetadataColumnId="Package\Dim Locations\Load SAP Locations\Update SAP Active.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          lineageId="Package\Dim Locations\Load SAP Locations\SAP Locations.Outputs[OLE DB Source Output].Columns[CountryId]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Load SAP Locations\Update SAP Active.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          dataType="bool"
+                          name="Param_0">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Load SAP Locations\Update SAP Active.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          dataType="wstr"
+                          length="10"
+                          name="Param_1">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Load SAP Locations\Update SAP Active.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          dataType="wstr"
+                          length="50"
+                          name="Param_2">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Load SAP Locations\Update SAP Active.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          dataType="i4"
+                          name="Param_3">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Dim Locations\Load SAP Locations\Update SAP Active.Outputs[OLE DB Command Output]"
+                      exclusionGroup="1"
+                      name="OLE DB Command Output"
+                      synchronousInputId="Package\Dim Locations\Load SAP Locations\Update SAP Active.Inputs[OLE DB Command Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Dim Locations\Load SAP Locations\Update SAP Active.Outputs[OLE DB Command Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Command Error Output"
+                      synchronousInputId="Package\Dim Locations\Load SAP Locations\Update SAP Active.Inputs[OLE DB Command Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Dim Locations\Load SAP Locations\Update SAP Active.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Dim Locations\Load SAP Locations\Update SAP Active.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Dim Locations\Load SAP Locations\Update SAP Active.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Dim Locations\Load SAP Locations\Update SAP Active.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Dim Locations\Load SAP Locations.Paths[Lookup Match Output]"
+                  endId="Package\Dim Locations\Load SAP Locations\Update SAP Active.Inputs[OLE DB Command Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Dim Locations\Load SAP Locations\Does the Location Exist?.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Dim Locations\Load SAP Locations.Paths[Lookup No Match Output]"
+                  endId="Package\Dim Locations\Load SAP Locations\DimLocations.Inputs[OLE DB Destination Input]"
+                  name="Lookup No Match Output"
+                  startId="Package\Dim Locations\Load SAP Locations\Does the Location Exist?.Outputs[Lookup No Match Output]" />
+                <path
+                  refId="Package\Dim Locations\Load SAP Locations.Paths[OLE DB Source Output]"
+                  endId="Package\Dim Locations\Load SAP Locations\Does the Location Exist?.Inputs[Lookup Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Dim Locations\Load SAP Locations\SAP Locations.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Dim Locations\Truncate table DimLocation"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{75737979-71b2-4c45-a42e-394bbb35ed52}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Truncate table DimLocation"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{7AED1132-D5A3-4B5D-9DB6-56ED94FF62D6}"
+              SQLTask:SqlStatementSource="Truncate Table DimLocationsTest;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Dim Locations\Update WebPortalRegionId"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{71da03c5-0c66-46b4-8b9c-3896ed42ece4}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Update WebPortalRegionId"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Dim Locations\Update WebPortalRegionId\DimLocations"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="DimLocations"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">Select LocationCode, LocationName, CountryId from DimLocationsTest</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Dim Locations\Update WebPortalRegionId\DimLocations.Connections[OleDbConnection]"
+                      connectionManagerID="{7AED1132-D5A3-4B5D-9DB6-56ED94FF62D6}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[OAF_SHARED_DIMENSIONS_Staging]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Dim Locations\Update WebPortalRegionId\DimLocations.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Dim Locations\Update WebPortalRegionId\DimLocations.Outputs[OLE DB Source Output].Columns[LocationCode]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Dim Locations\Update WebPortalRegionId\DimLocations.Outputs[OLE DB Source Output].ExternalColumns[LocationCode]"
+                          length="10"
+                          lineageId="Package\Dim Locations\Update WebPortalRegionId\DimLocations.Outputs[OLE DB Source Output].Columns[LocationCode]"
+                          name="LocationCode"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Dim Locations\Update WebPortalRegionId\DimLocations.Outputs[OLE DB Source Output].Columns[LocationName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Dim Locations\Update WebPortalRegionId\DimLocations.Outputs[OLE DB Source Output].ExternalColumns[LocationName]"
+                          length="50"
+                          lineageId="Package\Dim Locations\Update WebPortalRegionId\DimLocations.Outputs[OLE DB Source Output].Columns[LocationName]"
+                          name="LocationName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Dim Locations\Update WebPortalRegionId\DimLocations.Outputs[OLE DB Source Output].Columns[CountryId]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Dim Locations\Update WebPortalRegionId\DimLocations.Outputs[OLE DB Source Output].ExternalColumns[CountryId]"
+                          lineageId="Package\Dim Locations\Update WebPortalRegionId\DimLocations.Outputs[OLE DB Source Output].Columns[CountryId]"
+                          name="CountryId"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Update WebPortalRegionId\DimLocations.Outputs[OLE DB Source Output].ExternalColumns[LocationCode]"
+                          dataType="wstr"
+                          length="10"
+                          name="LocationCode" />
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Update WebPortalRegionId\DimLocations.Outputs[OLE DB Source Output].ExternalColumns[LocationName]"
+                          dataType="wstr"
+                          length="50"
+                          name="LocationName" />
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Update WebPortalRegionId\DimLocations.Outputs[OLE DB Source Output].ExternalColumns[CountryId]"
+                          dataType="i4"
+                          name="CountryId" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Dim Locations\Update WebPortalRegionId\DimLocations.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Dim Locations\Update WebPortalRegionId\DimLocations.Outputs[OLE DB Source Error Output].Columns[LocationCode]"
+                          dataType="wstr"
+                          length="10"
+                          lineageId="Package\Dim Locations\Update WebPortalRegionId\DimLocations.Outputs[OLE DB Source Error Output].Columns[LocationCode]"
+                          name="LocationCode" />
+                        <outputColumn
+                          refId="Package\Dim Locations\Update WebPortalRegionId\DimLocations.Outputs[OLE DB Source Error Output].Columns[LocationName]"
+                          dataType="wstr"
+                          length="50"
+                          lineageId="Package\Dim Locations\Update WebPortalRegionId\DimLocations.Outputs[OLE DB Source Error Output].Columns[LocationName]"
+                          name="LocationName" />
+                        <outputColumn
+                          refId="Package\Dim Locations\Update WebPortalRegionId\DimLocations.Outputs[OLE DB Source Error Output].Columns[CountryId]"
+                          dataType="i4"
+                          lineageId="Package\Dim Locations\Update WebPortalRegionId\DimLocations.Outputs[OLE DB Source Error Output].Columns[CountryId]"
+                          name="CountryId" />
+                        <outputColumn
+                          refId="Package\Dim Locations\Update WebPortalRegionId\DimLocations.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Dim Locations\Update WebPortalRegionId\DimLocations.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Dim Locations\Update WebPortalRegionId\DimLocations.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Dim Locations\Update WebPortalRegionId\DimLocations.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Dim Locations\Update WebPortalRegionId\Get WebPortal LocationID"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Get WebPortal LocationID"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select LocationId as WebPortalLocationId,cast(LocationCode as nvarchar(8)) as LocationCode, Cast(LocationName as Nvarchar(20)) as LocationName, CountryId from Location</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select LocationId as WebPortalLocationId,cast(LocationCode as nvarchar(8)) as LocationCode, Cast(LocationName as Nvarchar(20)) as LocationName, CountryId from Location) [refTable]
+where [refTable].[LocationCode] = ? and [refTable].[LocationName] = ? and [refTable].[CountryId] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="WebPortalLocationId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="LocationCode" dataType="DT_WSTR" length="8" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="LocationName" dataType="DT_WSTR" length="20" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CountryId" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Dim Locations\Update WebPortalRegionId\DimLocations.Outputs[OLE DB Source Output].Columns[LocationCode]};#{Package\Dim Locations\Update WebPortalRegionId\DimLocations.Outputs[OLE DB Source Output].Columns[LocationName]};#{Package\Dim Locations\Update WebPortalRegionId\DimLocations.Outputs[OLE DB Source Output].Columns[CountryId]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Dim Locations\Update WebPortalRegionId\Get WebPortal LocationID.Connections[OleDbConnection]"
+                      connectionManagerID="{F9E63293-CEAA-4370-AE0A-71A2E159BB33}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[Web Expense]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Dim Locations\Update WebPortalRegionId\Get WebPortal LocationID.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Dim Locations\Update WebPortalRegionId\Get WebPortal LocationID.Inputs[Lookup Input].Columns[LocationCode]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="LocationCode"
+                          lineageId="Package\Dim Locations\Update WebPortalRegionId\DimLocations.Outputs[OLE DB Source Output].Columns[LocationCode]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">LocationCode</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Dim Locations\Update WebPortalRegionId\Get WebPortal LocationID.Inputs[Lookup Input].Columns[LocationName]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="LocationName"
+                          lineageId="Package\Dim Locations\Update WebPortalRegionId\DimLocations.Outputs[OLE DB Source Output].Columns[LocationName]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">LocationName</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Dim Locations\Update WebPortalRegionId\Get WebPortal LocationID.Inputs[Lookup Input].Columns[CountryId]"
+                          cachedDataType="i4"
+                          cachedName="CountryId"
+                          lineageId="Package\Dim Locations\Update WebPortalRegionId\DimLocations.Outputs[OLE DB Source Output].Columns[CountryId]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">CountryId</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Dim Locations\Update WebPortalRegionId\Get WebPortal LocationID.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Dim Locations\Update WebPortalRegionId\Get WebPortal LocationID.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Dim Locations\Update WebPortalRegionId\Get WebPortal LocationID.Outputs[Lookup Match Output].Columns[WebPortalLocationId]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\Dim Locations\Update WebPortalRegionId\Get WebPortal LocationID.Outputs[Lookup Match Output].Columns[WebPortalLocationId]"
+                          name="WebPortalLocationId"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">WebPortalLocationId</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Dim Locations\Update WebPortalRegionId\Get WebPortal LocationID.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Dim Locations\Update WebPortalRegionId\Get WebPortal LocationID.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Dim Locations\Update WebPortalRegionId\Get WebPortal LocationID.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Dim Locations\Update WebPortalRegionId\Get WebPortal LocationID.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Dim Locations\Update WebPortalRegionId\Get WebPortal LocationID.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Dim Locations\Update WebPortalRegionId\Get WebPortal LocationID.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Dim Locations\Update WebPortalRegionId\Get WebPortal LocationID.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Dim Locations\Update WebPortalRegionId\Get WebPortal LocationID.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Dim Locations\Update WebPortalRegionId\Update WebPortalLocationID"
+                  componentClassID="Microsoft.OLEDBCommand"
+                  contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+                  name="Update WebPortalLocationID"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">Update DimLocationsTest
+
+set WebPortalLocationID = ?
+
+where LocationCode = ? and LocationName = ? and CountryId = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Dim Locations\Update WebPortalRegionId\Update WebPortalLocationID.Connections[OleDbConnection]"
+                      connectionManagerID="{7AED1132-D5A3-4B5D-9DB6-56ED94FF62D6}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[OAF_SHARED_DIMENSIONS_Staging]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Dim Locations\Update WebPortalRegionId\Update WebPortalLocationID.Inputs[OLE DB Command Input]"
+                      errorOrTruncationOperation="Command Execution"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Command Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Dim Locations\Update WebPortalRegionId\Update WebPortalLocationID.Inputs[OLE DB Command Input].Columns[WebPortalLocationId]"
+                          cachedDataType="i4"
+                          cachedName="WebPortalLocationId"
+                          externalMetadataColumnId="Package\Dim Locations\Update WebPortalRegionId\Update WebPortalLocationID.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          lineageId="Package\Dim Locations\Update WebPortalRegionId\Get WebPortal LocationID.Outputs[Lookup Match Output].Columns[WebPortalLocationId]" />
+                        <inputColumn
+                          refId="Package\Dim Locations\Update WebPortalRegionId\Update WebPortalLocationID.Inputs[OLE DB Command Input].Columns[LocationCode]"
+                          cachedDataType="wstr"
+                          cachedLength="10"
+                          cachedName="LocationCode"
+                          externalMetadataColumnId="Package\Dim Locations\Update WebPortalRegionId\Update WebPortalLocationID.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          lineageId="Package\Dim Locations\Update WebPortalRegionId\DimLocations.Outputs[OLE DB Source Output].Columns[LocationCode]" />
+                        <inputColumn
+                          refId="Package\Dim Locations\Update WebPortalRegionId\Update WebPortalLocationID.Inputs[OLE DB Command Input].Columns[LocationName]"
+                          cachedDataType="wstr"
+                          cachedLength="50"
+                          cachedName="LocationName"
+                          externalMetadataColumnId="Package\Dim Locations\Update WebPortalRegionId\Update WebPortalLocationID.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          lineageId="Package\Dim Locations\Update WebPortalRegionId\DimLocations.Outputs[OLE DB Source Output].Columns[LocationName]" />
+                        <inputColumn
+                          refId="Package\Dim Locations\Update WebPortalRegionId\Update WebPortalLocationID.Inputs[OLE DB Command Input].Columns[CountryId]"
+                          cachedDataType="i4"
+                          cachedName="CountryId"
+                          externalMetadataColumnId="Package\Dim Locations\Update WebPortalRegionId\Update WebPortalLocationID.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          lineageId="Package\Dim Locations\Update WebPortalRegionId\DimLocations.Outputs[OLE DB Source Output].Columns[CountryId]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Update WebPortalRegionId\Update WebPortalLocationID.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          dataType="i4"
+                          name="Param_0">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Update WebPortalRegionId\Update WebPortalLocationID.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          dataType="wstr"
+                          length="10"
+                          name="Param_1">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Update WebPortalRegionId\Update WebPortalLocationID.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          dataType="wstr"
+                          length="50"
+                          name="Param_2">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Dim Locations\Update WebPortalRegionId\Update WebPortalLocationID.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          dataType="i4"
+                          name="Param_3">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Dim Locations\Update WebPortalRegionId\Update WebPortalLocationID.Outputs[OLE DB Command Output]"
+                      exclusionGroup="1"
+                      name="OLE DB Command Output"
+                      synchronousInputId="Package\Dim Locations\Update WebPortalRegionId\Update WebPortalLocationID.Inputs[OLE DB Command Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Dim Locations\Update WebPortalRegionId\Update WebPortalLocationID.Outputs[OLE DB Command Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Command Error Output"
+                      synchronousInputId="Package\Dim Locations\Update WebPortalRegionId\Update WebPortalLocationID.Inputs[OLE DB Command Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Dim Locations\Update WebPortalRegionId\Update WebPortalLocationID.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Dim Locations\Update WebPortalRegionId\Update WebPortalLocationID.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Dim Locations\Update WebPortalRegionId\Update WebPortalLocationID.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Dim Locations\Update WebPortalRegionId\Update WebPortalLocationID.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Dim Locations\Update WebPortalRegionId.Paths[Lookup Match Output]"
+                  endId="Package\Dim Locations\Update WebPortalRegionId\Update WebPortalLocationID.Inputs[OLE DB Command Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Dim Locations\Update WebPortalRegionId\Get WebPortal LocationID.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Dim Locations\Update WebPortalRegionId.Paths[OLE DB Source Output]"
+                  endId="Package\Dim Locations\Update WebPortalRegionId\Get WebPortal LocationID.Inputs[Lookup Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Dim Locations\Update WebPortalRegionId\DimLocations.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Dim Locations.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{EFD6F03B-FE62-4A00-A52E-DD5544654D48}"
+          DTS:From="Package\Dim Locations\Load Roster Locations"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Dim Locations\Load Country and Region" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Dim Locations.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{344993c7-771d-48b3-b316-05f0c9804fb1}"
+          DTS:From="Package\Dim Locations\Load RegionID Keys"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Dim Locations\Update WebPortalRegionId" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Dim Locations.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{eae0ced4-cf35-4c8e-b8f9-fee0f0997e35}"
+          DTS:From="Package\Dim Locations\Load SAP Locations"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Dim Locations\Load RegionID Keys" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Dim Locations.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{EAD8C753-1A37-4659-979B-DEA13A449ED6}"
+          DTS:From="Package\Dim Locations\Truncate table DimLocation"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\Dim Locations\Load Roster Locations" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Dim Locations.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{D2BFFE58-2AEF-4CF3-B395-42D2EFA238BC}"
+          DTS:From="Package\Dim Locations\Load Country and Region"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\Dim Locations\Load SAP Locations" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="151.428571428572,42.2857142857143"
+          Id="Package\Dim Locations\Data Flow Task"
+          TopLeft="394.857158297585,177.913055330298" />
+        <NodeLayout
+          Size="198.857142857143,42.2857142857143"
+          Id="Package\Dim Locations\Load Country and Region"
+          TopLeft="157.396834546717,166.285725836428" />
+        <NodeLayout
+          Size="173.714285714286,41.7142857142858"
+          Id="Package\Dim Locations\Load RegionID Keys"
+          TopLeft="72.3076978943054,348.727281351064" />
+        <NodeLayout
+          Size="182.857142857143,42.2857142857143"
+          Id="Package\Dim Locations\Load Roster Locations"
+          TopLeft="32,106" />
+        <NodeLayout
+          Size="170.857142857143,42.2857142857143"
+          Id="Package\Dim Locations\Load SAP Locations"
+          TopLeft="45,222" />
+        <NodeLayout
+          Size="209.142857142858,42.2857142857143"
+          Id="Package\Dim Locations\Truncate table DimLocation"
+          TopLeft="190.476195522086,2.45963365697497" />
+        <NodeLayout
+          Size="205.714285714286,41.7142857142858"
+          Id="Package\Dim Locations\Update WebPortalRegionId"
+          TopLeft="118.974366272695,459.737392825456" />
+        <EdgeLayout
+          Id="Package\Dim Locations.PrecedenceConstraints[Constraint]"
+          TopLeft="214.857142857143,127.142857142857">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="41.9682631181456,39.1428686935709"
+              Start="0,0"
+              End="41.9682631181456,31.6428686935709">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="37.9682631181456,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="37.9682631181456,0"
+                    Point2="41.9682631181456,0"
+                    Point3="41.9682631181456,4" />
+                  <mssgle:LineSegment
+                    End="41.9682631181456,31.6428686935709" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim Locations.PrecedenceConstraints[Constraint 1]"
+          TopLeft="159.107697894305,390.327281351064">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="62.6666683783899,69.4101114743922"
+              Start="0,0"
+              End="62.6666683783899,61.9101114743922">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.7050557371961" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.7050557371961"
+                    Point2="0,34.7050557371961"
+                    Point3="4,34.7050557371961" />
+                  <mssgle:LineSegment
+                    End="58.6666683783899,34.7050557371961" />
+                  <mssgle:CubicBezierSegment
+                    Point1="58.6666683783899,34.7050557371961"
+                    Point2="62.6666683783899,34.7050557371961"
+                    Point3="62.6666683783899,38.7050557371961" />
+                  <mssgle:LineSegment
+                    End="62.6666683783899,61.9101114743922" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim Locations.PrecedenceConstraints[Constraint 2]"
+          TopLeft="130.428571428571,264.285714285714">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="28.7362693228768,84.4415670653497"
+              Start="0,0"
+              End="28.7362693228768,76.9415670653497">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.2207835326749" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,38.2207835326749"
+                    Point2="0,42.2207835326749"
+                    Point3="4,42.2207835326749" />
+                  <mssgle:LineSegment
+                    End="24.7362693228768,42.2207835326749" />
+                  <mssgle:CubicBezierSegment
+                    Point1="24.7362693228768,42.2207835326749"
+                    Point2="28.7362693228768,42.2207835326749"
+                    Point3="28.7362693228768,46.2207835326749" />
+                  <mssgle:LineSegment
+                    End="28.7362693228768,76.9415670653497" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim Locations.PrecedenceConstraints[Constraint 3]"
+          TopLeft="295.047624093515,44.7453479426893">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-171.619052664943,61.2546520573108"
+              Start="0,0"
+              End="-171.619052664943,53.7546520573108">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.6273260286554" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26.6273260286554"
+                    Point2="0,30.6273260286554"
+                    Point3="-4,30.6273260286554" />
+                  <mssgle:LineSegment
+                    End="-167.619052664943,30.6273260286554" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-167.619052664943,30.6273260286554"
+                    Point2="-171.619052664943,30.6273260286554"
+                    Point3="-171.619052664943,34.6273260286554" />
+                  <mssgle:LineSegment
+                    End="-171.619052664943,53.7546520573108" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim Locations.PrecedenceConstraints[Constraint 4]"
+          TopLeft="157.396834546717,187.428582979285">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-26.9682631181456,34.5714170207148"
+              Start="0,0"
+              End="-26.9682631181456,27.0714170207148">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-22.9682631181456,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-22.9682631181456,0"
+                    Point2="-26.9682631181456,0"
+                    Point3="-26.9682631181456,4" />
+                  <mssgle:LineSegment
+                    End="-26.9682631181456,27.0714170207148" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43.428571428571431"
+          IsExpanded="True"
+          PanelSize="560.571428571429,590.857142857143"
+          Size="560.571428571429,634.285714285715"
+          Id="Package\Dim Locations"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Dim Locations\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="244,41.7142857142858"
+          Id="Package\Dim Locations\Data Flow Task\Lookup Region and Country Details"
+          TopLeft="60,60" />
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\Dim Locations\Load Roster Locations">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="157.714285714286,42.2857142857143"
+          Id="Package\Dim Locations\Load Roster Locations\DimLocationTest"
+          TopLeft="494.901580342456,276.053410122609" />
+        <NodeLayout
+          Size="188,42.2857142857143"
+          Id="Package\Dim Locations\Load Roster Locations\Roster Location Source"
+          TopLeft="481,33" />
+        <EdgeLayout
+          Id="Package\Dim Locations\Load Roster Locations.Paths[OLE DB Source Output]"
+          TopLeft="574.379361599799,75.2857142857143">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,200.767695836895"
+              Start="0,0"
+              End="0,193.267695836895">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,193.267695836895" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dim Locations\Load Roster Locations\DimLocationTest">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dim Locations\Load Roster Locations\Roster Location Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Dim Locations\Load SAP Locations">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="144,41.7142857142858"
+          Id="Package\Dim Locations\Load SAP Locations\SAP Locations"
+          TopLeft="569,59" />
+        <NodeLayout
+          Size="141.714285714286,41.7142857142858"
+          Id="Package\Dim Locations\Load SAP Locations\DimLocations"
+          TopLeft="685.6,534.8" />
+        <NodeLayout
+          Size="165.714285714286,42.2857142857143"
+          Id="Package\Dim Locations\Load SAP Locations\Update SAP Active"
+          TopLeft="247.8,528.8" />
+        <NodeLayout
+          Size="194.285714285715,42.2857142857143"
+          Id="Package\Dim Locations\Load SAP Locations\Does the Location Exist?"
+          TopLeft="528.6,178.771428571429" />
+        <EdgeLayout
+          Id="Package\Dim Locations\Load SAP Locations.Paths[Lookup Match Output]"
+          TopLeft="594.695238095238,221.057142857143">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-264.038095238095,307.742857142857"
+              Start="0,0"
+              End="-264.038095238095,300.242857142857">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,120.60533422237" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,120.60533422237"
+                    Point2="0,124.60533422237"
+                    Point3="-4,124.60533422237" />
+                  <mssgle:LineSegment
+                    End="-260.038095238095,124.60533422237" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-260.038095238095,124.60533422237"
+                    Point2="-264.038095238095,124.60533422237"
+                    Point3="-264.038095238095,128.60533422237" />
+                  <mssgle:LineSegment
+                    End="-264.038095238095,300.242857142857" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-180.210434337798,129.60533422237,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim Locations\Load SAP Locations.Paths[Lookup No Match Output]"
+          TopLeft="656.790476190476,221.057142857143">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="99.6666666666667,313.742857142857"
+              Start="0,0"
+              End="99.6666666666667,306.242857142857">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,123.034739123187" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,123.034739123187"
+                    Point2="0,127.034739123187"
+                    Point3="4,127.034739123187" />
+                  <mssgle:LineSegment
+                    End="95.6666666666667,127.034739123187" />
+                  <mssgle:CubicBezierSegment
+                    Point1="95.6666666666667,127.034739123187"
+                    Point2="99.6666666666667,127.034739123187"
+                    Point3="99.6666666666667,131.034739123187" />
+                  <mssgle:LineSegment
+                    End="99.6666666666667,306.242857142857" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-5.97305338541665,132.034739123187,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim Locations\Load SAP Locations.Paths[OLE DB Source Output]"
+          TopLeft="641,100.714285714286">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-15.2571428571429,78.0571428571429"
+              Start="0,0"
+              End="-15.2571428571429,70.5571428571429">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.0285714285714" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,35.0285714285714"
+                    Point2="0,39.0285714285714"
+                    Point3="-4,39.0285714285714" />
+                  <mssgle:LineSegment
+                    End="-11.2571428571429,39.0285714285714" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-11.2571428571429,39.0285714285714"
+                    Point2="-15.2571428571429,39.0285714285714"
+                    Point3="-15.2571428571429,43.0285714285714" />
+                  <mssgle:LineSegment
+                    End="-15.2571428571429,70.5571428571429" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dim Locations\Load SAP Locations\SAP Locations">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dim Locations\Load SAP Locations\Does the Location Exist?">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimLocationsTest]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dim Locations\Load SAP Locations\DimLocations">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Dim Locations\Update WebPortalRegionId">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="200,41.7142857142858"
+          Id="Package\Dim Locations\Update WebPortalRegionId\Get WebPortal LocationID"
+          TopLeft="526.4,223.2" />
+        <NodeLayout
+          Size="141.714285714286,41.7142857142858"
+          Id="Package\Dim Locations\Update WebPortalRegionId\DimLocations"
+          TopLeft="565.2,88.8" />
+        <NodeLayout
+          Size="214.285714285715,41.7142857142858"
+          Id="Package\Dim Locations\Update WebPortalRegionId\Update WebPortalLocationID"
+          TopLeft="625.2,372" />
+        <EdgeLayout
+          Id="Package\Dim Locations\Update WebPortalRegionId.Paths[OLE DB Source Output]"
+          TopLeft="636,130.4">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9.60000000000002,92.8"
+              Start="0,0"
+              End="-9.60000000000002,85.3">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.4" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,42.4"
+                    Point2="0,46.4"
+                    Point3="-4,46.4" />
+                  <mssgle:LineSegment
+                    End="-5.60000000000002,46.4" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5.60000000000002,46.4"
+                    Point2="-9.60000000000002,46.4"
+                    Point3="-9.60000000000002,50.4" />
+                  <mssgle:LineSegment
+                    End="-9.60000000000002,85.3" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim Locations\Update WebPortalRegionId.Paths[Lookup Match Output]"
+          TopLeft="626.4,264.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="106,107.2"
+              Start="0,0"
+              End="106,99.7">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,49.6"
+                    Point2="0,53.6"
+                    Point3="4,53.6" />
+                  <mssgle:LineSegment
+                    End="102,53.6" />
+                  <mssgle:CubicBezierSegment
+                    Point1="102,53.6"
+                    Point2="106,53.6"
+                    Point3="106,57.6" />
+                  <mssgle:LineSegment
+                    End="106,99.7" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="4.80861328125,58.6,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dim Locations\Update WebPortalRegionId\DimLocations">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

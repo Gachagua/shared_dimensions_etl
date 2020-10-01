@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="DataWarehouse"
+  DTS:DTSID="{7BFA4561-4CBB-451B-9C6C-6AF410C2D4F1}"
+  DTS:CreationName="OLEDB">
+  <DTS:PropertyExpression
+    DTS:Name="ServerName">@[$Project::ServerName]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=mtama.oneacrefund.org,6543;User ID=BOSSIS0001;Initial Catalog=OAF_SAP_DATAWAREHOUSE;Provider=SQLNCLI11.1;Persist Security Info=True;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1"
+        p4:Salt="Xco4AAfxHHI="
+        p4:IV="IHfNJGdWGe54X35hONfJSA=="
+        p4:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" xmlns:p4="www.microsoft.com/SqlServer/SSIS">5LcOhMnfd0wiIwwUxW4sA2Dd93HGNwH3PUIxMGzZsKQU3qeF2NzYMyCoe4k7obDF9vkq/I+Ah8fu74KUHjW+/078QobXYjLLnxzEUI8VVO1bZ6OwV5tW4sOrxS1Tj5QAVDuKsGWf/qFr3V4/WmGFKDf2oQy/HkjhXEBdg7rUWOY=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

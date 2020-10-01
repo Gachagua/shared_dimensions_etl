@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Zambia"
+  DTS:DTSID="{420F14AF-B28B-47FF-8041-E3CC7A097FDB}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=sapdb,3341;User ID=BOSSIS0001;Initial Catalog=SBK_OAF_ACC_ZA;Provider=SQLNCLI11.1;Persist Security Info=True;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1"
+        p4:Salt="0NdTdAjesC8="
+        p4:IV="drkfCb5H8M/ve2d2+RP2kQ=="
+        p4:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" xmlns:p4="www.microsoft.com/SqlServer/SSIS">oR60Dfad/2cvTVfDJsHdoVj6lrNPz+ECjUCrR/8SUpbjOS+fdccbSPyVjIHVWyHJ2hMz3O+BMZtKqyAsIhWLymSjzLzhn/oeZit/6+8l2SwRL/HckkAO1WTqR6oaVwkY2P+nAf+7WKpqKXbmKvpbqeqP+rEICPIFXQzYICv+J/I=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

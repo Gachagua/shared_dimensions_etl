@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="RosterDataWarehouse"
+  DTS:DTSID="{A583FB1C-858F-4B24-9341-844EC8EEDAAB}"
+  DTS:CreationName="OLEDB">
+  <DTS:PropertyExpression
+    DTS:Name="ServerName">@[$Project::ServerName]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=mtama.oneacrefund.org,6543;User ID=BOSSIS0001;Initial Catalog=RosterDataWarehouse;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1"
+        p4:Salt="4Dgcck4IaKU="
+        p4:IV="x5Ctit1vSL3Vtzh3H4v/CQ=="
+        p4:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" xmlns:p4="www.microsoft.com/SqlServer/SSIS">6bdQxRtGBLJFHn1eAqC8LHdca0IiUfmZ7jB4CPWuhPNe+J2/ak4qVbZvxhZY7YpuI6QZrX49Q4Oh/4YrXVfqxlWDFfYSFPJal5Nwl+YjCoD73+72JfqjQ69zqHhV7OZUx9lovCCsPII/9NGSYVqoOyET4ML4DuKVPAJ5FIQnNWQ=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

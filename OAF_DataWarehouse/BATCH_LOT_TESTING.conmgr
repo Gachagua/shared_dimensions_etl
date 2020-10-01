@@ -1,0 +1,17 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="BATCH_LOT_TESTING"
+  DTS:DTSID="{C310C7CB-99A0-439C-8A77-430315F04575}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=grains.oneacrefund.org,3341;User ID=BOSSIS0001;Initial Catalog=BATCH_LOT_TESTING;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1"
+        p4:Salt="vRcAjgAlSL0="
+        p4:IV="sMy+iZuEFA3g05PW1hpg4g=="
+        p4:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" xmlns:p4="www.microsoft.com/SqlServer/SSIS">8SbImev6VV6ugmgFOb8aVJX2T3nvWlyLanPzpoP9UeOTO9meTDbTLFZfJhjBzBDPU2y+JA9zOc9OuQ2oHDkUAzhdfP2d45jBt0W+yBd1IJjVJ+TgnZPalA4mpZBSzzKnszDWDpVXy+kbJImjYUjAdaZjl/nUSCXuhADLTiEr5rg=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

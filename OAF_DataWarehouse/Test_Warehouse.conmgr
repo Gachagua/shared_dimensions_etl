@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="Test_Warehouse"
+  DTS:DTSID="{85F7C732-BB6B-474B-A1AB-2CEE8DE351BB}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=173.212.223.134;User ID=BOSSIS0001;Initial Catalog=OAF_SAP_DATAWAREHOUSE;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1"
+        p4:Salt="mVv9cRtfbI4="
+        p4:IV="VDzlVa1WhK8IX+jeXMCeCA=="
+        p4:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" xmlns:p4="www.microsoft.com/SqlServer/SSIS">LDfuBhcG1bQ2vUInER/4pf4w7+4ed6GEI42nmNUfZu/lBevPyVXFzRml7zGxAFilDp+PGewYBklCPQzBvCWcquyNIcLrrsylYuZPPYRq6tMz4M50zISHiwRb+tDl8PSWnNLBJ0o3hn0Hiu2AQdFl2xXxLgktjZT4cg9sr8z+Oso=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

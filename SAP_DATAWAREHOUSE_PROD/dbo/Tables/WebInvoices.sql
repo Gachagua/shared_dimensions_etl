@@ -1,0 +1,26 @@
+﻿CREATE TABLE [dbo].[WebInvoices] (
+    [Country]              NVARCHAR (MAX)  NULL,
+    [SapInvoiceLineID]     INT             NULL,
+    [VendorName]           NVARCHAR (100)  NULL,
+    [CreatedDate]          DATETIME2 (7)   NULL,
+    [PaymentDueDate]       DATETIME2 (7)   NULL,
+    [Installments #]       INT             NULL,
+    [AP DP?]               VARCHAR (1)     NULL,
+    [Amount]               NUMERIC (29, 2) NULL,
+    [USDCost]              NUMERIC (18, 2) NULL,
+    [Currency]             NVARCHAR (MAX)  NULL,
+    [WithholdingTaxRate]   NUMERIC (8, 6)  NULL,
+    [Withholdingtaxamount] NUMERIC (18, 2) NULL,
+    [ApproverID]           NVARCHAR (450)  NULL,
+    [RequesterID]          NVARCHAR (450)  NULL,
+    [Requester]            NVARCHAR (201)  NULL,
+    [RequesterEmail]       NVARCHAR (256)  NULL,
+    [StatusID]             INT             NULL,
+    [StatusName]           NVARCHAR (MAX)  NULL,
+    [Tags]                 NVARCHAR (100)  NULL,
+    [InvoiceHeaderID]      INT             NULL,
+    [VendorID]             INT             NULL,
+    [Approver]             NVARCHAR (201)  NULL,
+    [FilePath]             NVARCHAR (MAX)  NULL
+);
+

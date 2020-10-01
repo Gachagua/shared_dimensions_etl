@@ -1,0 +1,25 @@
+﻿CREATE TABLE [dbo].[AssetItemBalances] (
+    [LogInstance]                 INT             NULL,
+    [ObjectType]                  NVARCHAR (20)   NULL,
+    [PeriodCategory]              NVARCHAR (10)   NULL,
+    [DepreciationArea]            NVARCHAR (15)   NULL,
+    [ItemCode]                    NVARCHAR (50)   NULL,
+    [APC]                         NUMERIC (19, 6) NULL,
+    [HistoricalAPC]               NUMERIC (19, 6) NULL,
+    [Quantity]                    NUMERIC (19, 6) NULL,
+    [AccumulatedOrdinaryDepr]     NUMERIC (19, 6) NULL,
+    [AccumulatedUnplannedDepr]    NUMERIC (19, 6) NULL,
+    [SpDpKey1]                    NVARCHAR (2)    NULL,
+    [SpDpAcc1]                    NUMERIC (19, 6) NULL,
+    [SpDpKey2]                    NVARCHAR (2)    NULL,
+    [SpDpAcc2]                    NUMERIC (19, 6) NULL,
+    [SpDpKey3]                    NVARCHAR (2)    NULL,
+    [SpDpAcc3]                    NUMERIC (19, 6) NULL,
+    [SalvageValue]                NUMERIC (19, 6) NULL,
+    [OrdinaryDeprAccumulation01]  NUMERIC (19, 6) NULL,
+    [AccumulatedWriteUp]          NUMERIC (19, 6) NULL,
+    [ManuallyChangedSalvageValue] VARCHAR (1)     NULL,
+    [AccumulatedAppreciation]     NUMERIC (19, 6) NULL,
+    [CountryCode]                 NVARCHAR (3)    NULL
+);
+

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/30/2019 5:04:29 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="GACHAGUA-PC"
+  DTS:CreatorName="GACHAGUA-PC\watchman"
+  DTS:DTSID="{3234F516-CA20-42F2-92FD-BA03BD15CAAF}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.0900.30"
+  DTS:LocaleID="2057"
+  DTS:ObjectName="Package2"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionGUID="{CE1CA1AC-C329-424E-A21F-E44AA57D1C45}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables />
+</DTS:Executable>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="CDC_USA"
+  DTS:DTSID="{D353624F-57AE-4184-BBC0-FC3B700EEAEE}"
+  DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=78.46.202.231;User ID=sa;Initial Catalog=SBK_OAF_ACC_USA;Application Name=SSIS-OAF_DataWarehouse-{D353624F-57AE-4184-BBC0-FC3B700EEAEE}78.46.202.231.SBK_OAF_ACC_USA.sa;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1"
+        p4:Salt="J4n9ZpT17A=="
+        p4:IV="wISul4ByP+M=" xmlns:p4="www.microsoft.com/SqlServer/SSIS">/Mmt9CjTBXo5oCSvcuJ8EmegEk4KN7zEi2AGXpfxUg2IoBzlSiQZp/XAQzzanbaHh2dPojzMOYxuT8VIIB+tgqeKHqiPze7N+VSlb6zvReLFNdMwonpkXwJHDPboEiOQayudNvVihZLgITgAnaYjiVRToxiMO5KO9nl3ujkJnmk=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

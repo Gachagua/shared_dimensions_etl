@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="USManualSAPReports"
+  DTS:DTSID="{25CB00CD-7FAD-4A27-A93E-2396ED89C15E}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=sapdb,3341;User ID=BOSSIS0001;Initial Catalog=ManualSAPReports;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1"
+        p4:Salt="w2ynsxs+v3g="
+        p4:IV="zvIiEBewlKM+d0NreSc5wQ=="
+        p4:Algorithm="http://www.w3.org/2001/04/xmlenc#aes256-cbc" xmlns:p4="www.microsoft.com/SqlServer/SSIS">n4/hDbmLcAWRV0vxxFfZhAcmcstLvrxCjnqgJLgRg0cKVJeBvp7eNhi8bIfgNMGntCcLl0WM/BHsSgwLuF7u3Xh0T7DrRNEXnMLATZOlB2sF5KN6f4rBx/dlmbXEg5VMx9zv6nF3DJhvVXZtcqn5cE8SdVAB99uTWiymVBxAdSY=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
